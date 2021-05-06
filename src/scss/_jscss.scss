@@ -1,0 +1,33 @@
+// lazyload.js
+.lazyload,
+.lazyloading {
+  opacity: 0; }
+
+.loading,
+.lazyload,
+.lazyloaded,
+.image {
+  opacity: 1;
+  transition: 2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+//fullpage.js
+#fv-dots ul li {
+  padding: 6px;
+}
+
+#fv-dots ul li a span {
+  background-color: var(--clr-green-200);
+  border-radius: 0;
+  transition: all 0.5s ease;
+  width: 6px;
+  height: 6px;
+}
+
+#fv-dots ul a.active span {
+  width: 11px;
+  height: 11px;
+  transform: rotate(45deg);
+  background-color: var(--clr-umber-300)!important;
+}

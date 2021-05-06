@@ -1,0 +1,40 @@
+$type-scale:(
+    small: (
+        300: 1rem,
+        400: 1.125rem,
+        500: 1.563rem,
+        600: 1.953rem,
+        700: 2.441rem,
+        800: 3.052rem,
+    ),
+    large: (
+        300: 1rem,
+        400: 1.425rem,
+        500: 2rem,
+        600: 2.827rem,
+        700: 4rem,
+        800: 5.653rem,
+    )
+);
+
+$p-font-sizes: (
+  null  : 15px,
+  480px : 16px,
+  640px : 16px,
+  1024px: 17px
+);
+
+$intro-font-sizes: (
+  null  : 21.5px,
+  480px : 21.5px,
+  640px : 28px,
+  1024px: 32px
+);
+
+$h1-font-sizes: (
+  null  : 28px,
+  480px : 28px,
+  640px : 32px,
+  1024px: 40px
+);
+

@@ -1,0 +1,114 @@
+/**
+ * Variables
+ * =================================
+ * - Typography
+ * - Breakpoints
+ * - Paths
+ * - Layout & Grid
+ * - App-specific
+ * - Colors
+ */
+
+/* stylelint-disable indentation */
+
+/**
+ * Typography
+ * =================================
+ *
+ * Base sizes:
+ * Set this in pixels (but do not add px),
+ * the font-size mixin will convert to REMS
+ */
+
+ 
+ $light: 300;
+ $normal: 400;
+ $semibold: 500;
+ $bold: 700;
+
+$font-size-base           : 16;
+$font-size-base-px        : $font-size-base * 1px;
+$font-size-base-narrow    : $font-size-base - 2;
+$font-size-base-narrow-px : $font-size-base-narrow * 1px;
+
+$leading-base             : 1.4;
+$line-height-base         : round($font-size-base * $leading-base); // 20 * 1.4
+$baseline                 : $line-height-base * 1px;
+
+$type-scale               : 1.25; // Major third
+
+// Font stacks
+$sans: 'BentonSans-Regular', Helvetica, Arial, sans-serif;
+$serif: 'Plantin MT Pro Light', "Times New Roman", Times, serif;
+$serif-italic:'Plantin MT Pro Light Italic',Times, serif;
+$font-family-headings     : $sans; // using inherit will use $font-family-sans for all headings
+$line-height-headings     : 1.15;
+
+
+
+/**
+ * Breakpoints
+ * =================================
+ * There are no common breakpoints so these are just a suggestions
+ * You'll need to define your own breakpoints to suit your design
+ * Add your breakpoints to this Sass map
+ * Used in the Kickoff grid
+ */
+$breakpoints: (
+	small                  : 40em,
+	mid                    : 65em,
+	large                  : 90em,
+	huge                   : 1250px
+);
+
+// Setup layout max-width
+$layout-margin                : 0; // [in pixels] Space outside the grid
+$layout-max-width             : 1000; // [in pixels]
+$layout-min-width             : 960;  // [in pixels] Minimum width for layout in <IE9
+$layout-max-width--huge       : 1100; // [in pixels]
+$layout-min-width--huge       : 1100; // [in pixels] Minimum width for layout in <IE9
+
+
+/**
+ * Grid
+ * =================================
+ * These variables will control the grid module.
+ *
+ * if your project doesnt use Kickoff’s default grid, you can delete these
+ */
+
+$grid-column-count        : 12; // Total column count
+$grid-gutter-width        : 20; // [in pixels]
+
+//Settings here override & affect the grid classes output
+$responsive-grid-sizes    : true; // Disable this if you don't want grid sizes for each breakpoint
+$use-legacy-grid          : true; // Disable this is you on’t want to output .no-flexbox classes for older browsers to use
+
+
+/**
+ * Path variables
+ * =================================
+ */
+$img-path                 : "/assets/dist/img"; // Usage: background: url('#{$img-path}/img.jpg') 0 0 no-repeat;
+
+
+/**
+ * Z-index variables
+ * =================================
+ */
+$z-low                       : 10;
+$z-mid                       : 100;
+$z-high                      : 1000;
+
+
+/**
+ * App-specific variables
+ * =================================
+ */
+$default-transition-timing   : cubic-bezier(0.77, 0, 0.175, 1);
+$default-transition-duration : 0.5s;
+$default-transition          : all $default-transition-duration $default-transition-timing;
+
+// Add your own :)
+
+
