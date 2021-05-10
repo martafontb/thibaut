@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--FullPage Js-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css" integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A==" crossorigin="anonymous" />
     <!--End FullPage Js-->
@@ -31,49 +32,72 @@
     <div></div>
     <div></div>
   </div>
-  <div class="wrapper">
-<header class="header">
-    <a href="#"><img src="img/thibaut-verrue-logo.svg" alt="thibaut verrue"></a>
+
+  <div id="consent-popup" class="hidden"> 
+    <p>Cookies dragen bij tot een verbeterde gebruikservaring. Door deze site te blijven gebruiken, ga je akkoord met de <a href="#">Privacy Policy</a>.
+      <a href="#" class="close" id="accept"></a>
+    </p> 
+  </div>
+<div class="wrapper" id="wrapper">
+  <div id="fullpage">
+  <header class="header"> 
       <nav class="nav">
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu-nav">
-          <li class="menu-nav__item active">
-            <a href="index.html" class="menu-nav__link">
-              Home
-            </a>
-          </li>
-          <li class="menu-nav__item">
-            <a href="#" class="menu-nav__link">
-              Blog
-            </a>
-          </li>
-          <li class="menu-nav__item">
-            <a href="#" class="menu-nav__link">
-              Podcast
-            </a>
-          </li>
-          <li class="menu-nav__item">
-            <a href="#" class="menu-nav__link">
-              Clients
-            </a>
-          </li>
-          <li class="menu-nav__item">
-            <a href="#" class="menu-nav__link">
-              About
-            </a>
-          </li>
-          <li class="menu-nav__item">
-            <a href="#" class="menu-nav__link">
-              <i class="fab fa-linkedin-in text-umber-300"></i>
-            </a>
-          </li>
-        </ul>
+            <img id="logo1" src="img/thibaut-verrue-logo.svg" alt="thibaut verrue">
+            <img id="logo2" src="img/small-logo.svg" alt="thibaut verrue">
+          <ul class="menu-nav">
+              <li class="menu-nav__item active">
+                <a href="index.html" class="menu-nav__link">
+                  Home
+                </a>
+              </li>
+              <li class="menu-nav__item">
+                <a href="blog.html" class="menu-nav__link">
+                  Blog
+                </a>
+              </li>
+              <li class="menu-nav__item">
+                <a href="podcast.html" class="menu-nav__link">
+                  Podcast
+                </a>
+              </li>
+              <li class="menu-nav__item">
+                <a href="#" class="menu-nav__link">
+                  Clients
+                </a>
+              </li>
+              <li class="menu-nav__item">
+                <a href="#" class="menu-nav__link">
+                  About
+                </a>
+              </li>
+              <li class="menu-nav__item">
+                <a href="#" class="menu-nav__link">
+                  <i class="fab fa-linkedin-in text-umber-300"></i>
+                </a>
+              </li>
+          </ul>
+          <input class="menu-btn" type="checkbox" id="nav_check"/>
+          <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       </nav>
+      
+      <!-- <nav>
+        <ul>
+        <li class="logo"><a href="#"><img src="img/small-logo.svg" alt="thibaut verrue"></a></li>
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">Blog</a></li>
+        <li class="item"><a href="#">Podcast</a></li>
+        <li class="item"><a href="#">Clients</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item"><a href="#"><i class="fab fa-linkedin-in text-umber-300"></i></a></li>
+        <li class="toggle"><a href="#"><span class="bars"></span></a></li>
+        </ul>
+      </nav> -->
+
 </header>
-<!-- <div id="fullpage"> -->
+<!-- <div id="fullview"> -->
+
     <main>
-      <section class="section vertical-scrolling scrollable-pane">
+      <section class="section vertical-scrolling" id="page-one">
         <div class="intro">
           <div class="intro__text">
             <h2>Welkom</h2>
@@ -85,6 +109,7 @@
           </div>
           <div class="intro__photo loading">
             <img src="img/Image fade-in.jpg" 
+            loading=lazy
             alt="" 
             class="lazyload"
             data-aos="fade-in"
@@ -107,14 +132,10 @@
       </section>
 
 
-      <section class="section vertical-scrolling scrollable-pane">
+      <section class="section vertical-scrolling">
         <div class="clients">
-          <div class="client__photo loading">
-            <img src="img/DSC00332-2 1.jpg" 
-            alt="" 
-            class="lazyload" 
-            data-aos="fade-in"
-            >
+          <div class="client__photo">
+            <img src="/img/DSC00332-2 1.jpg" alt="">
           </div>
           <div class="client__text">
             <h2>Clients</h2>
@@ -128,9 +149,9 @@
       </section>
     </main>
   </div>
+  </div>
 <!-- </div> End of fullPage  -->
     <footer>
-    <!-- <div class="vertical-scrolling"> -->
     <div class="contact">
     <div class="socials">
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -154,19 +175,13 @@
   </div>
   <!-- </div> -->
 </footer>
-<!-- </div> End of full page --> 
+<!-- </div>  -->
     <script src="js/lazysizes.min.js" async=""></script>
-   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
-
+    <!-- <script src="js/fullpage.offsetSections.min.js"></script>
+    <script src="js/fullpage.extensions.min.js"></script>
+    <script src="js/fullpage.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-            duration: 4000, 
-            easing: 'ease', 
-            once: false,
-            mirror: true
-      });
-    </script>
-    <script src="js/js.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
