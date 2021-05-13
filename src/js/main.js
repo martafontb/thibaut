@@ -33,12 +33,12 @@ window.onload = () => {
      setTimeout(() => {
       consentPopup.classList.remove('hidden');
       wrapper.classList.add('cookies');
-     }, 1000);
+     }, 1500);
    }
 };
 
 
-//       new fullpage('#fullpage', {
+//   new fullpage('#fullpage', {
 //   offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
 //   offsetSections: true,
 //   sectionSelector: '.vertical-scrolling',
@@ -55,12 +55,7 @@ window.onload = () => {
 
 
 
-new fullpage("#fullpage", {
-  offsetSections: true,
-  sectionSelector: '.vertical-scrolling',
-  navigation: true,
-  parallax: true
-});
+
 
 // lazyload images
 const lazy = () => {
@@ -79,9 +74,10 @@ const lazy = () => {
     topOnEmptyHash: true,
   });
 
-  //cursor 
+//cursor 
 const cursorTag = document.querySelector("div.cursors") 
 const balls = cursorTag.querySelectorAll("div")
+const cta = document.querySelectorAll("a")
 
 let aimX = 0
 let aimY = 0
@@ -111,6 +107,18 @@ document.addEventListener("mousemove", function(event) {
 })
 
 
+cta.forEach(cta => {
+  cta.addEventListener("mouseover", function() {
+    balls.forEach(cursor => cursor.style.backgroundColor = "transparent")
+  })
+  cta.addEventListener("mouseout", function() {
+    balls.forEach(cursor => cursor.style.backgroundColor = "rgba(202,207,199, 0.1)")
+  })
+})
+
+
+
+
 Splitting();
 
 AOS.init({
@@ -118,3 +126,36 @@ AOS.init({
   easing: 'ease', 
   once: false
 });
+
+
+$(document).ready(function () {
+
+
+	/* Slide variable */
+		// var slideIndexBis = 1;
+		// var sliding = false;
+	
+    $('#fullpage').fullpage({
+      
+      responsive: true,
+      navigation: true,
+      offsetSections: true,
+      anchors:['firstPage', 'secondPage', 'thirdPage'],
+
+    onLeave: function(origin, destination){
+      const section = destination.item;
+      const paragraph = section.querySelectorAll('.word');
+      paragraph.forEach(word => word.style.animation = "slide-up 1s forwards" )
+      // const timeline = gsap.timeline({ delay: 0.5 });
+      // timeline.fromTo( paragraph, { duration: 1, y:"-100%", opacity: 0}, { y: "0", opacity : 1} )
+        $('.section [data-aos]').removeClass("aos-animate");
+    }, 
+
+    afterLoad: function(origin, destination){
+        $('.section.active [data-aos]').addClass("aos-animate");
+
+    }
+  });
+
+});
+

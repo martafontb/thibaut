@@ -3,7 +3,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 8em;
-    img {
+    svg {
         margin-right: auto;
     }
     @include mq(small) {
@@ -12,7 +12,15 @@ header {
     }
 }
 
-#logo1 {display:block;}
+#logo1 {
+    display:block;
+    path {
+        transition: $default-transition;
+    }
+    &:hover > path {
+        fill:var(--clr-umber-300);
+    }
+}
 #logo2 {display:none}
     
 @media all and (max-width: 499px) {

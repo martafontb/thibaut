@@ -28,7 +28,7 @@
  left: 300px;
  width:30px;
  height: 30px;
- background-color:rgba(202,207,199, 0.2);
+ background-color:rgba(202,207,199, 0.1);
  border-radius: 50%;
  z-index:10000;
  pointer-events: none;
@@ -41,13 +41,6 @@
     border-bottom:0;
     position: absolute;
   }
-  &:last-child:hover::before {
-    mix-blend-mode: difference;
-  }
- &:hover {
-    background-blend-mode: difference;
- }
-
   @include mq(mid) {
     display:none;
   }
@@ -59,8 +52,7 @@
   transition: all .5s ease-in-out;
 }
 
-
-.fade-in.active {
+.fade-in {
   opacity: 1;
 }
 
@@ -107,15 +99,39 @@ grid-template-rows: auto;
     padding: $line-height-base 0 $line-height-base *2 0 ; 
     @include font-size($intro-font-sizes);
   }
+
+  span.word {
+    animation: slide-up 1s forwards;
+    animation-delay: calc(.2s + (.1s * var(--line-index)));
+    opacity:0;
+    @keyframes slide-up {
+      from {
+        transform:translateY(200%);
+        opacity:0;
+      }
+      to {
+        transform:translateY(0%);
+        opacity:1;
+      }
+  }
+}
+
+ 
+
+
+  .active{
+    transform: translateY(0%);
+    transition: $default-transition;
+  }
+
   .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     min-width: 250px;
-    
     a {
-      margin:$line-height-base 45px 0 45px;
+      margin:$line-height-base 45px 3 45px;
     }
   }
 }
@@ -143,6 +159,7 @@ display: grid;
 grid-gap: 20px;
 grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
 place-items: center;
+overflow: hidden;
   @include mq(small) {
     grid-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -151,6 +168,7 @@ place-items: center;
 div.blog,
 div.clients {
   margin-bottom:6em;
+  overflow: hidden;
 }
 
 .intro__photo,
@@ -162,6 +180,7 @@ div.clients {
   place-items: center;
    img {
      width: 80%;
+     animation: fadein 2s;
      @include aspect-ratio(1, 1);
       @include mq(mid) {
         width: 100%;
@@ -267,7 +286,7 @@ footer{
   right:0;
   padding: 1rem;
   opacity:1;
-  transition: opacity .8s ease;
+  transition: opacity 2s ease;
   background-color:var(--clr-umber-300);
   color: var(--clr-rose-100);
   font-family: $sans;
@@ -312,20 +331,4 @@ footer{
     }  
 }
 
-// .intro__text,
-// .blog,
-// .client__text {
-// 	font-size: 0;
-// 	position: relative;
-// 	overflow: hidden;
-// 	padding-bottom: 0.4rem;
-// }
-
-// @keyframes up {
-	
-// 	100% {
-// 		transform: translateY(0);
-// 	}
-	
-// }
 

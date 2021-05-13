@@ -181,9 +181,9 @@ window.onload = function () {
     setTimeout(function () {
       consentPopup.classList.remove('hidden');
       wrapper.classList.add('cookies');
-    }, 1000);
+    }, 1500);
   }
-}; //       new fullpage('#fullpage', {
+}; //   new fullpage('#fullpage', {
 //   offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
 //   offsetSections: true,
 //   sectionSelector: '.vertical-scrolling',
@@ -196,14 +196,8 @@ window.onload = function () {
 //   * <div class="section" data-percentage="80" data-centered="true">
 //   */
 // });
+// lazyload images
 
-
-new fullpage("#fullpage", {
-  offsetSections: true,
-  sectionSelector: '.vertical-scrolling',
-  navigation: true,
-  parallax: true
-}); // lazyload images
 
 var lazy = function lazy() {
   document.addEventListener('lazyloaded', function (e) {
@@ -222,6 +216,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
 var cursorTag = document.querySelector("div.cursors");
 var balls = cursorTag.querySelectorAll("div");
+var cta = document.querySelectorAll("a");
 var aimX = 0;
 var aimY = 0;
 balls.forEach(function (ball, index) {
@@ -243,11 +238,47 @@ document.addEventListener("mousemove", function (event) {
   aimX = event.pageX;
   aimY = event.pageY;
 });
+cta.forEach(function (cta) {
+  cta.addEventListener("mouseover", function () {
+    balls.forEach(function (cursor) {
+      return cursor.style.backgroundColor = "transparent";
+    });
+  });
+  cta.addEventListener("mouseout", function () {
+    balls.forEach(function (cursor) {
+      return cursor.style.backgroundColor = "rgba(202,207,199, 0.1)";
+    });
+  });
+});
 Splitting();
 AOS.init({
   duration: 4000,
   easing: 'ease',
   once: false
+});
+$(document).ready(function () {
+  /* Slide variable */
+  // var slideIndexBis = 1;
+  // var sliding = false;
+  $('#fullpage').fullpage({
+    responsive: true,
+    navigation: true,
+    offsetSections: true,
+    anchors: ['firstPage', 'secondPage', 'thirdPage'],
+    onLeave: function onLeave(origin, destination) {
+      var section = destination.item;
+      var paragraph = section.querySelectorAll('.word');
+      paragraph.forEach(function (word) {
+        return word.style.animation = "slide-up 1s forwards";
+      }); // const timeline = gsap.timeline({ delay: 0.5 });
+      // timeline.fromTo( paragraph, { duration: 1, y:"-100%", opacity: 0}, { y: "0", opacity : 1} )
+
+      $('.section [data-aos]').removeClass("aos-animate");
+    },
+    afterLoad: function afterLoad(origin, destination) {
+      $('.section.active [data-aos]').addClass("aos-animate");
+    }
+  });
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -277,7 +308,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51642" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53227" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

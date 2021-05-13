@@ -260,7 +260,7 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 8em; }
-  header img {
+  header svg {
     margin-right: auto; }
   @media only screen and (max-width: 40em) {
     header {
@@ -269,6 +269,10 @@ header {
 
 #logo1 {
   display: block; }
+  #logo1 path {
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
+  #logo1:hover > path {
+    fill: var(--clr-umber-300); }
 
 #logo2 {
   display: none; }
@@ -357,7 +361,7 @@ ul {
   left: 300px;
   width: 30px;
   height: 30px;
-  background-color: rgba(202, 207, 199, 0.2);
+  background-color: rgba(202, 207, 199, 0.1);
   border-radius: 50%;
   z-index: 10000;
   pointer-events: none;
@@ -368,10 +372,6 @@ ul {
     top: 10px;
     border-bottom: 0;
     position: absolute; }
-  .cursors div:last-child:hover::before {
-    mix-blend-mode: difference; }
-  .cursors div:hover {
-    background-blend-mode: difference; }
   @media only screen and (max-width: 65em) {
     .cursors div {
       display: none; } }
@@ -380,7 +380,7 @@ ul {
   opacity: 0;
   transition: all .5s ease-in-out; }
 
-.fade-in.active {
+.fade-in {
   opacity: 1; }
 
 a {
@@ -474,6 +474,21 @@ main {
     @media screen and (min-width: 1024px) {
       main .content__paragraph {
         font-size: 32px; } }
+  main span.word {
+    animation: slide-up 1s forwards;
+    animation-delay: calc(.2s + (.1s * var(--line-index)));
+    opacity: 0; }
+
+@keyframes slide-up {
+  from {
+    transform: translateY(200%);
+    opacity: 0; }
+  to {
+    transform: translateY(0%);
+    opacity: 1; } }
+  main .active {
+    transform: translateY(0%);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
   main .links {
     display: flex;
     flex-wrap: wrap;
@@ -481,7 +496,7 @@ main {
     align-items: center;
     min-width: 250px; }
     main .links a {
-      margin: 22 45px 0 45px; }
+      margin: 22 45px 3 45px; }
 
 div#fp-nav {
   transform: rotate(90deg); }
@@ -501,7 +516,8 @@ div.clients {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-  place-items: center; }
+  place-items: center;
+  overflow: hidden; }
   @media only screen and (max-width: 40em) {
     div.intro,
     div.clients {
@@ -510,7 +526,8 @@ div.clients {
 
 div.blog,
 div.clients {
-  margin-bottom: 6em; }
+  margin-bottom: 6em;
+  overflow: hidden; }
 
 .intro__photo,
 .client__photo {
@@ -522,6 +539,7 @@ div.clients {
   .intro__photo img,
   .client__photo img {
     width: 80%;
+    animation: fadein 2s;
     position: relative; }
     .intro__photo img:before,
     .client__photo img:before {
@@ -643,7 +661,7 @@ footer {
   right: 0;
   padding: 1rem;
   opacity: 1;
-  transition: opacity .8s ease;
+  transition: opacity 2s ease;
   background-color: var(--clr-umber-300);
   color: var(--clr-rose-100);
   font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
