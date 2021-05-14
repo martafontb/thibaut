@@ -270,9 +270,7 @@ $(document).ready(function () {
       var paragraph = section.querySelectorAll('.word');
       paragraph.forEach(function (word) {
         return word.style.animation = "slide-up 1s forwards";
-      }); // const timeline = gsap.timeline({ delay: 0.5 });
-      // timeline.fromTo( paragraph, { duration: 1, y:"-100%", opacity: 0}, { y: "0", opacity : 1} )
-
+      });
       $('.section [data-aos]').removeClass("aos-animate");
     },
     afterLoad: function afterLoad(origin, destination) {
@@ -308,7 +306,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53227" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55720" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

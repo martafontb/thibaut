@@ -137,6 +137,19 @@ table {
   transform: rotate(45deg);
   background-color: var(--clr-umber-300) !important; }
 
+span.word {
+  animation: slide-up 1s forwards;
+  animation-delay: calc(.2s + (.1s * var(--line-index)));
+  opacity: 0; }
+
+@keyframes slide-up {
+  from {
+    transform: translateY(200%);
+    opacity: 0; }
+  to {
+    transform: translateY(0%);
+    opacity: 1; } }
+
 :root {
   --clr-umber-100: #f7ede4;
   --clr-umber-200: #f5ece5;
@@ -474,18 +487,6 @@ main {
     @media screen and (min-width: 1024px) {
       main .content__paragraph {
         font-size: 32px; } }
-  main span.word {
-    animation: slide-up 1s forwards;
-    animation-delay: calc(.2s + (.1s * var(--line-index)));
-    opacity: 0; }
-
-@keyframes slide-up {
-  from {
-    transform: translateY(200%);
-    opacity: 0; }
-  to {
-    transform: translateY(0%);
-    opacity: 1; } }
   main .active {
     transform: translateY(0%);
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
@@ -510,24 +511,45 @@ section {
     section {
       padding: 0; } }
 
-div.intro,
-div.clients {
+.intro,
+.clients {
   height: 100%;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   place-items: center;
   overflow: hidden; }
+  @media only screen and (max-width: 65em) {
+    .intro,
+    .clients {
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      grid-gap: 0px; }
+      .intro .intro__photo,
+      .intro .client__text,
+      .clients .intro__photo,
+      .clients .client__text {
+        margin-bottom: 8em; }
+      .intro .intro__text,
+      .intro .client__photo,
+      .clients .intro__text,
+      .clients .client__photo {
+        margin-top: 2em; } }
   @media only screen and (max-width: 40em) {
-    div.intro,
-    div.clients {
+    .intro,
+    .clients {
       grid-gap: 0px;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
 
-div.blog,
-div.clients {
+.intro,
+.blog,
+.clients {
   margin-bottom: 6em;
   overflow: hidden; }
+  @media only screen and (max-width: 40em) {
+    .intro,
+    .blog,
+    .clients {
+      margin-bottom: 2em; } }
 
 .intro__photo,
 .client__photo {
@@ -558,11 +580,6 @@ div.clients {
       .intro__photo img,
       .client__photo img {
         width: 100%; } }
-
-@media only screen and (max-width: 40em) {
-  .intro__photo,
-  .client__text {
-    margin-bottom: 6em; } }
 
 footer {
   padding: 75px;

@@ -100,24 +100,6 @@ grid-template-rows: auto;
     @include font-size($intro-font-sizes);
   }
 
-  span.word {
-    animation: slide-up 1s forwards;
-    animation-delay: calc(.2s + (.1s * var(--line-index)));
-    opacity:0;
-    @keyframes slide-up {
-      from {
-        transform:translateY(200%);
-        opacity:0;
-      }
-      to {
-        transform:translateY(0%);
-        opacity:1;
-      }
-  }
-}
-
- 
-
 
   .active{
     transform: translateY(0%);
@@ -152,23 +134,40 @@ padding: 0 93px;
 }
 
 
-div.intro,
-div.clients {
+.intro,
+.clients {
 height:100%;
 display: grid;
 grid-gap: 20px;
-grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 place-items: center;
 overflow: hidden;
+  @include mq(mid){
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 0px;
+    .intro__photo,
+    .client__text {
+      margin-bottom:8em;
+    }
+    .intro__text,
+    .client__photo{
+      margin-top:2em;
+    }
+  }
   @include mq(small) {
     grid-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
-div.blog,
-div.clients {
+
+.intro,
+.blog,
+.clients {
   margin-bottom:6em;
   overflow: hidden;
+    @include mq(small) {
+      margin-bottom: 2em;
+  }
 }
 
 .intro__photo,
@@ -185,13 +184,6 @@ div.clients {
       @include mq(mid) {
         width: 100%;
       }
-  }
-}
-
-.intro__photo,
-.client__text {
-  @include mq(small) {
-      margin-bottom:6em;
   }
 }
 

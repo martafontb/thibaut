@@ -146,8 +146,6 @@ $(document).ready(function () {
       const section = destination.item;
       const paragraph = section.querySelectorAll('.word');
       paragraph.forEach(word => word.style.animation = "slide-up 1s forwards" )
-      // const timeline = gsap.timeline({ delay: 0.5 });
-      // timeline.fromTo( paragraph, { duration: 1, y:"-100%", opacity: 0}, { y: "0", opacity : 1} )
         $('.section [data-aos]').removeClass("aos-animate");
     }, 
 
