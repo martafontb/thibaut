@@ -160,11 +160,12 @@ overflow: hidden;
   }
 }
 
-.intro,
+
 .blog,
 .clients {
-  margin-bottom:6em;
+  margin-bottom: 6em;
   overflow: hidden;
+  z-index: -1;
     @include mq(small) {
       margin-bottom: 2em;
   }

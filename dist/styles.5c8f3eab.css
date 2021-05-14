@@ -540,13 +540,12 @@ section {
       grid-gap: 0px;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
 
-.intro,
 .blog,
 .clients {
   margin-bottom: 6em;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: -1; }
   @media only screen and (max-width: 40em) {
-    .intro,
     .blog,
     .clients {
       margin-bottom: 2em; } }
