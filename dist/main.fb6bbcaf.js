@@ -118,6 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
+var _fullpage;
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -183,20 +185,7 @@ window.onload = function () {
       wrapper.classList.add('cookies');
     }, 1500);
   }
-}; //   new fullpage('#fullpage', {
-//   offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
-//   offsetSections: true,
-//   sectionSelector: '.vertical-scrolling',
-//   navigation: true
-//   /*
-//   * To define the percentage of each section the attribute data-percentage 
-//   * must be used. The centering of the section in the viewport can be 
-//   * determined by using a boolean value in the attribute data-centered 
-//   * (default to true if not specified). For example:
-//   * <div class="section" data-percentage="80" data-centered="true">
-//   */
-// });
-// lazyload images
+}; // lazyload images
 
 
 var lazy = function lazy() {
@@ -249,34 +238,90 @@ cta.forEach(function (cta) {
       return cursor.style.backgroundColor = "rgba(202,207,199, 0.1)";
     });
   });
-});
-Splitting();
+}); //splitting
+
+Splitting(); //aos
+
 AOS.init({
   duration: 4000,
   easing: 'ease',
   once: false
-});
-$(document).ready(function () {
-  /* Slide variable */
-  // var slideIndexBis = 1;
-  // var sliding = false;
-  $('#fullpage').fullpage({
-    responsive: true,
-    navigation: true,
-    offsetSections: true,
-    anchors: ['firstPage', 'secondPage', 'thirdPage'],
-    onLeave: function onLeave(origin, destination) {
-      var section = destination.item;
-      var paragraph = section.querySelectorAll('.word');
-      paragraph.forEach(function (word) {
-        return word.style.animation = "slide-up 1s forwards";
-      });
-      $('.section [data-aos]').removeClass("aos-animate");
-    },
-    afterLoad: function afterLoad(origin, destination) {
-      $('.section.active [data-aos]').addClass("aos-animate");
-    }
-  });
+}); //fullpage
+// $(document).ready(function () {
+//     $('#fullpage').fullpage({
+//       licenseKey:'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
+//       responsive: true,
+//       navigation: true,
+//       offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
+//       offsetSections: true,
+//       anchors:['firstPage', 'secondPage', 'thirdPage'],
+//     onLeave: function(){
+//         $('.section [data-aos]').removeClass("aos-animate");
+//     }, 
+//     afterLoad: function(){
+//         $('.section.active [data-aos]').addClass("aos-animate");
+//     }
+//   });
+// });
+
+new fullpage('#fullpage', (_fullpage = {
+  licenseKey: 'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
+  responsive: true,
+  navigation: true,
+  offsetSections: true,
+  offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
+  anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+
+  /*
+  * To define the percentage of each section the attribute data-percentage 
+  * must be used. The centering of the section in the viewport can be 
+  * determined by using a boolean value in the attribute data-centered 
+  * (default to true if not specified). For example:
+  * <div class="section" data-percentage="80" data-centered="true">
+  */
+  slidesNavigation: true
+}, _defineProperty(_fullpage, "offsetSections", true), _defineProperty(_fullpage, "keyboardScrolling", true), _defineProperty(_fullpage, "animateAnchor", true), _defineProperty(_fullpage, "recordHistory", false), _defineProperty(_fullpage, "css3", true), _defineProperty(_fullpage, "scrollingSpeed", 700), _defineProperty(_fullpage, "fitToSection", false), _defineProperty(_fullpage, "fitToSectionDelay", 1000), _defineProperty(_fullpage, "easing", 'easeInOutCubic'), _defineProperty(_fullpage, "easingcss3", 'ease'), _defineProperty(_fullpage, "dragAndMove", 'fingersonly'), _defineProperty(_fullpage, "resetSliders", false), _defineProperty(_fullpage, "touchSensitivity", 15), _defineProperty(_fullpage, "normalScrollElementTouchThreshold", 5), _fullpage)); //menu
+
+function menuToggle() {
+  var menu = document.getElementById('menu-overlay');
+  var fpNav = document.getElementById('fp-nav');
+  var nav = document.querySelector('nav');
+  menu.classList.toggle('active');
+  nav.classList.toggle('dark');
+
+  if (menu.classList.contains("active")) {
+    fpNav.style.opacity = 0;
+    gsap.to(".burger-top", {
+      rotation: 45,
+      transformOrigin: "50% 50%",
+      y: 8
+    });
+    gsap.to(".burger-bottom", {
+      rotation: -45,
+      transformOrigin: "50% 50%",
+      y: -8
+    });
+    gsap.to(".burger-mid", {
+      width: 0
+    });
+  } else {
+    fpNav.style.opacity = 1;
+    gsap.to(".burger-top", {
+      rotation: 0,
+      y: 0
+    });
+    gsap.to(".burger-bottom", {
+      rotation: 0,
+      y: 0
+    });
+    gsap.to(".burger-mid", {
+      width: 23
+    });
+  }
+}
+
+document.getElementById('toggleIcon').addEventListener('touchstart', function () {
+  menuToggle();
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

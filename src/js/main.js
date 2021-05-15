@@ -37,26 +37,6 @@ window.onload = () => {
    }
 };
 
-
-//   new fullpage('#fullpage', {
-//   offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
-//   offsetSections: true,
-//   sectionSelector: '.vertical-scrolling',
-//   navigation: true
-//   /*
-//   * To define the percentage of each section the attribute data-percentage 
-//   * must be used. The centering of the section in the viewport can be 
-//   * determined by using a boolean value in the attribute data-centered 
-//   * (default to true if not specified). For example:
-//   * <div class="section" data-percentage="80" data-centered="true">
-//   */
-
-// });
-
-
-
-
-
 // lazyload images
 const lazy = () => {
     document.addEventListener('lazyloaded', (e) => {
@@ -116,11 +96,10 @@ cta.forEach(cta => {
   })
 })
 
-
-
-
+//splitting
 Splitting();
 
+//aos
 AOS.init({
   duration: 4000, 
   easing: 'ease', 
@@ -128,32 +107,89 @@ AOS.init({
 });
 
 
-$(document).ready(function () {
-
-
-	/* Slide variable */
-		// var slideIndexBis = 1;
-		// var sliding = false;
+//fullpage
+// $(document).ready(function () {
 	
-    $('#fullpage').fullpage({
-      
-      responsive: true,
-      navigation: true,
-      offsetSections: true,
-      anchors:['firstPage', 'secondPage', 'thirdPage'],
+//     $('#fullpage').fullpage({
+//       licenseKey:'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
+//       responsive: true,
+//       navigation: true,
+//       offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
+//       offsetSections: true,
+//       anchors:['firstPage', 'secondPage', 'thirdPage'],
 
-    onLeave: function(origin, destination){
-      const section = destination.item;
-      const paragraph = section.querySelectorAll('.word');
-      paragraph.forEach(word => word.style.animation = "slide-up 1s forwards" )
-        $('.section [data-aos]').removeClass("aos-animate");
-    }, 
+//     onLeave: function(){
+//         $('.section [data-aos]').removeClass("aos-animate");
+//     }, 
 
-    afterLoad: function(origin, destination){
-        $('.section.active [data-aos]').addClass("aos-animate");
+//     afterLoad: function(){
+//         $('.section.active [data-aos]').addClass("aos-animate");
 
-    }
-  });
+//     }
+//   });
 
+// });
+
+  new fullpage('#fullpage', {
+  licenseKey:'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
+  responsive: true,
+  navigation: true,
+  offsetSections: true,
+  offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
+  anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+  /*
+  * To define the percentage of each section the attribute data-percentage 
+  * must be used. The centering of the section in the viewport can be 
+  * determined by using a boolean value in the attribute data-centered 
+  * (default to true if not specified). For example:
+  * <div class="section" data-percentage="80" data-centered="true">
+  */
+  slidesNavigation: true,
+  offsetSections: true,
+
+  //Accessibility
+  keyboardScrolling: true,
+  animateAnchor: true,
+  recordHistory: false,
+
+  //Scrolling
+  css3: true,
+  scrollingSpeed: 700,
+  fitToSection: false,
+  fitToSectionDelay: 1000,
+  easing: 'easeInOutCubic',
+  easingcss3: 'ease',
+  dragAndMove: 'fingersonly',
+  resetSliders: false,
+  touchSensitivity: 15,
+  normalScrollElementTouchThreshold: 5,
 });
+
+
+//menu
+function menuToggle(){
+  const menu = document.getElementById('menu-overlay');
+  const fpNav = document.getElementById('fp-nav');
+  const nav = document.querySelector('nav');
+  menu.classList.toggle('active')
+  nav.classList.toggle('dark')
+ 
+  if (menu.classList.contains("active")) {   
+    fpNav.style.opacity = 0;
+    
+    gsap.to(".burger-top", { rotation: 45, transformOrigin: "50% 50%", y: 8 })
+    gsap.to(".burger-bottom", { rotation: -45, transformOrigin: "50% 50%", y: -8 })
+    gsap.to(".burger-mid", { width: 0 })
+  } else {
+    fpNav.style.opacity = 1;
+
+    gsap.to(".burger-top", { rotation: 0, y: 0 })
+    gsap.to(".burger-bottom", { rotation: 0, y: 0 })
+    gsap.to(".burger-mid", { width: 23 })
+  }
+}
+
+document.getElementById('toggleIcon').addEventListener('touchstart', function() {
+  menuToggle();
+})
 

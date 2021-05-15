@@ -32,18 +32,66 @@
   background-color: var(--clr-umber-300)!important;
 }
 
-span.word {
-  animation: slide-up 1s forwards;
-  animation-delay: calc(.2s + (.1s * var(--line-index)));
-  opacity:0;
-  @keyframes slide-up {
-    from {
+
+@keyframes slide-up {
+  from {
+    transform:translateY(200%);
+    opacity:0;
+  }
+  to {
+    transform:translateY(0%);
+    opacity:1;
+  }
+}
+
+[data-anchor="firstPage"] span.word {
+      animation: slide-up 1s forwards;
+      animation-delay: calc(.2s + (.1s * var(--line-index)));
+      opacity:0;
+      @keyframes slide-up {
+        from {
+          transform:translateY(200%);
+          opacity:0;
+        }
+        to {
+          transform:translateY(0%);
+          opacity:1;
+        }
+    }
+  }
+
+
+  [data-anchor="secondPage"] {
+    span.word {
       transform:translateY(200%);
       opacity:0;
-    }
-    to {
-      transform:translateY(0%);
-      opacity:1;
+      transition: all 1.1s ease-in;
     }
 }
+
+.fp-viewing-secondPage span.word  {
+  animation: slide-up 1s forwards;
+  animation-delay: calc(.2s + (.1s * var(--line-index)));
 }
+
+[data-anchor="thirdPage"] {
+  span.word {
+    transform:translateY(200%);
+    opacity:0;
+    transition: all 1.1s ease-in;
+  }
+  .client__photo img {
+    opacity:0;
+    transition: all 1.1s ease-in;
+  }
+}
+
+.fp-viewing-thirdPage span.word  {
+animation: slide-up 2s forwards;
+animation-delay: calc(.2s + (.1s * var(--line-index)));
+}
+
+.fp-viewing-thirdPage .client__photo img  {
+    opacity:1;
+  }
+  
