@@ -60,6 +60,19 @@
     }
   }
 
+  [data-anchor="firstPage"] .intro__photo { 
+    animation: fade-in 1s forwards;
+    opacity:0;
+    @keyframes fade-in {
+      from {
+        opacity:0;
+      }
+      to {
+        opacity:1;
+      }
+  }
+  }
+
 
   [data-anchor="secondPage"] {
     span.word {
