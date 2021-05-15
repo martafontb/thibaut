@@ -118,8 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-var _fullpage;
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -264,10 +262,11 @@ AOS.init({
 //   });
 // });
 
-new fullpage('#fullpage', (_fullpage = {
+new fullpage('#fullpage', {
   licenseKey: 'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
   responsive: true,
   navigation: true,
+  slidesNavigation: true,
   offsetSections: true,
   offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
   anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
@@ -279,8 +278,22 @@ new fullpage('#fullpage', (_fullpage = {
   * (default to true if not specified). For example:
   * <div class="section" data-percentage="80" data-centered="true">
   */
-  slidesNavigation: true
-}, _defineProperty(_fullpage, "offsetSections", true), _defineProperty(_fullpage, "keyboardScrolling", true), _defineProperty(_fullpage, "animateAnchor", true), _defineProperty(_fullpage, "recordHistory", false), _defineProperty(_fullpage, "css3", true), _defineProperty(_fullpage, "scrollingSpeed", 700), _defineProperty(_fullpage, "fitToSection", false), _defineProperty(_fullpage, "fitToSectionDelay", 1000), _defineProperty(_fullpage, "easing", 'easeInOutCubic'), _defineProperty(_fullpage, "easingcss3", 'ease'), _defineProperty(_fullpage, "dragAndMove", 'fingersonly'), _defineProperty(_fullpage, "resetSliders", false), _defineProperty(_fullpage, "touchSensitivity", 15), _defineProperty(_fullpage, "normalScrollElementTouchThreshold", 5), _fullpage)); //menu
+  //Accessibility
+  keyboardScrolling: true,
+  animateAnchor: true,
+  recordHistory: false,
+  //Scrolling
+  css3: true,
+  scrollingSpeed: 700,
+  fitToSection: false,
+  fitToSectionDelay: 1000,
+  easing: 'easeInOutCubic',
+  easingcss3: 'ease',
+  dragAndMove: 'fingersonly',
+  resetSliders: false,
+  touchSensitivity: 15,
+  normalScrollElementTouchThreshold: 5
+}); //menu
 
 function menuToggle() {
   var menu = document.getElementById('menu-overlay');

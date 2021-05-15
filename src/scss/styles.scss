@@ -10,7 +10,7 @@
 @import 'menu';
 
 .wrapper {
-  margin: 75px;
+  // margin: 75px;
   transform: translate3d(0px, -40px, 0px);
   transition: $default-transition;
     &.cookies {
@@ -143,7 +143,7 @@ overflow: hidden;
     grid-gap: 0px;
     .intro__photo,
     .client__text {
-      margin-bottom:8em;
+      margin-bottom:5em;
     }
     .intro__text,
     .client__photo{
@@ -192,12 +192,13 @@ padding: 75px;
 font-family: $sans;
 background-color: var(--clr-green-500);
 color: var(--clr-rose-100);
-.fp-tableCell {
+.fp-tableCell{
   vertical-align: top;
 }
   .contact,
   .socials,
-  .back-to-top {
+  .back-to-top,
+  .credits {
     padding: $line-height-base;
   }
   a {
@@ -212,10 +213,10 @@ color: var(--clr-rose-100);
       transform-origin: bottom left;
     }
   }
-  .socials,
-  .date {
-    padding-bottom:$line-height-base;
-  }
+  // .socials,
+  // .date {
+  //   padding-bottom:$line-height-base;
+  // }
   .socials a {
     padding:15px;  
     .fab{
@@ -228,6 +229,7 @@ color: var(--clr-rose-100);
   .copyright a,
   .credits {
     color: var(--clr-green-200);
+    line-height: 1.5;
   }
   .copyright a,
   .back-to-top a,

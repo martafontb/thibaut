@@ -134,6 +134,7 @@ AOS.init({
   licenseKey:'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
   responsive: true,
   navigation: true,
+  slidesNavigation: true,
   offsetSections: true,
   offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
   anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
@@ -144,8 +145,8 @@ AOS.init({
   * (default to true if not specified). For example:
   * <div class="section" data-percentage="80" data-centered="true">
   */
-  slidesNavigation: true,
-  offsetSections: true,
+
+
 
   //Accessibility
   keyboardScrolling: true,
