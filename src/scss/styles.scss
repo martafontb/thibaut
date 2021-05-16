@@ -9,17 +9,6 @@
 @import 'podcast';
 @import 'menu';
 
-.wrapper {
-  // margin: 75px;
-  transform: translate3d(0px, -40px, 0px);
-  transition: $default-transition;
-    &.cookies {
-      transform: translate3d(0px, 15px, 0px);
-  }
-  @include mq(mid) {
-    margin:25px;
-  }
-}
 
 .cursors div {
  position: absolute;
@@ -54,6 +43,22 @@
   opacity: 1;
 }
 
+.wrapper {
+  transform: translate3d(0px, -40px, 0px);
+  transition: $default-transition;
+    &.cookies {
+      transform: translate3d(0px, 25px, 0px);
+  }
+}
+
+// .header {
+//   transform: translate3d(0px, -40px, 0px);
+//   transition: $default-transition;
+//     &.cookies {
+//       transform: translate3d(0px, 25px, 0px);
+//   }
+// }
+
 a {
   text-decoration: none;
   font-family: $sans;
@@ -73,33 +78,35 @@ main {
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: auto;
-
-  h2,
-  a {
-    color:var(--clr-umber-300);
-    font-family: $sans;
-    @include font-size($p-font-sizes);
-  }
-  a {
-    @include hover-line-revers;
-    position:relative;
-    &::after {
-    content:url(../img/Vector.svg);
-    margin-left:10px;
-    top:10px;
-    border-bottom:0;
-    position: absolute;
+  section {
+    h2,
+    a {
+      color:var(--clr-umber-300);
+      font-family: $sans;
+      @include font-size($p-font-sizes);
     }
-  }
-.content__paragraph {
-    font-family: $serif;
-    line-height: $line-height-headings;
-    padding: $line-height-base 0 $line-height-base *2 0 ; 
-    @include font-size($intro-font-sizes);
-    @include mq(small){
-      padding: $line-height-base 0 $line-height-base  0;
+    a {
+      @include hover-line-revers;
+      position:relative;
+      &::after {
+      content:url(../img/Vector.svg);
+      margin-left:10px;
+      top:10px;
+      border-bottom:0;
+      position: absolute;
+      }
+    }
+  .content__paragraph {
+      font-family: $serif;
+      line-height: $line-height-headings;
+      padding: $line-height-base 0 $line-height-base *2 0 ; 
       @include font-size($intro-font-sizes);
-    }
+      @include mq(small){
+        padding: $line-height-base 0 $line-height-base  0;
+        @include font-size($intro-font-sizes);
+      }
+
+  }
   }
 
   .links {
@@ -112,20 +119,16 @@ grid-template-rows: auto;
       margin:$line-height-base 45px 3 45px;
     }
   }
-}
 
-div#fp-nav{
-  transform:rotate(90deg);
-}
-
-div#fp-nav a span {
-  background: var(--clr-umber-300) !important;
 }
 
 section {
-padding: 0 93px;
+padding: 0 163px;
   @include mq(mid) {
-    padding: 0;
+    padding: 0 53px;
+  }
+    @include mq(small) {
+    padding: 0 25px;
   }
 }
 
@@ -143,7 +146,7 @@ overflow: hidden;
     grid-gap: 0px;
     .intro__photo,
     .client__text {
-      margin-bottom:5em;
+      margin-bottom:8em;
     }
     .intro__text,
     .client__photo{
@@ -151,7 +154,7 @@ overflow: hidden;
     }
   }
   @include mq(small) {
-    .intro, .intro__text {
+    .intro, .intro__text, .client__photo {
       margin-top:0em;
     }
     grid-gap: 0px;
@@ -166,7 +169,7 @@ overflow: hidden;
   overflow: hidden;
   z-index: -1;
     @include mq(small) {
-      margin-bottom: 2em;
+      margin-bottom: 0;
   }
 }
 
@@ -187,11 +190,13 @@ overflow: hidden;
   }
 }
 
-footer {
-padding: 75px;
+#footer {
 font-family: $sans;
 background-color: var(--clr-green-500);
 color: var(--clr-rose-100);
+.footer-wrapper{
+  padding: 75px;
+}
 .fp-tableCell{
   vertical-align: top;
 }
@@ -200,6 +205,9 @@ color: var(--clr-rose-100);
   .back-to-top,
   .credits {
     padding: $line-height-base;
+    @include mq(small) {
+      padding:15px;
+    }
   }
   a {
     color: var(--clr-rose-100);
@@ -213,10 +221,6 @@ color: var(--clr-rose-100);
       transform-origin: bottom left;
     }
   }
-  // .socials,
-  // .date {
-  //   padding-bottom:$line-height-base;
-  // }
   .socials a {
     padding:15px;  
     .fab{
@@ -229,7 +233,7 @@ color: var(--clr-rose-100);
   .copyright a,
   .credits {
     color: var(--clr-green-200);
-    line-height: 1.5;
+    line-height: 2;
   }
   .copyright a,
   .back-to-top a,
@@ -254,7 +258,7 @@ color: var(--clr-rose-100);
 }
 
 div.blog,
-footer{
+#footer{
   @include flexCenter(column);
   justify-content: space-around;
   text-align: center;
@@ -286,7 +290,7 @@ footer{
   top:0;
   left:0;
   right:0;
-  padding: 1.1rem;
+  padding: 1.2rem;
   opacity:1;
   transition: opacity 2s ease;
   background-color:var(--clr-umber-300);

@@ -3,10 +3,18 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 8em;
+    margin-left: 5em;
+    margin-right: 5em;
     svg {
         margin-right: auto;
     }
+    @include mq(mid) {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
     @include mq(small) {
+        margin-left: 2em;
+        margin-right: 2em;
         margin-bottom: 1em;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }

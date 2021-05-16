@@ -167,11 +167,12 @@ var saveToStorage = function saveToStorage() {
 window.onload = function () {
   var consentPopup = document.getElementById('consent-popup');
   var acceptBtn = document.getElementById('accept');
-  var wrapper = document.getElementById('wrapper');
+  var wrapper = document.getElementById('wrapper'); // const header = document.getElementById('header')
 
   var acceptFn = function acceptFn(event) {
     saveToStorage(storageType);
-    consentPopup.classList.add('hidden');
+    consentPopup.classList.add('hidden'); // header.classList.remove('cookies');
+
     wrapper.classList.remove('cookies');
   };
 
@@ -179,7 +180,8 @@ window.onload = function () {
 
   if (shouldShowPopup()) {
     setTimeout(function () {
-      consentPopup.classList.remove('hidden');
+      consentPopup.classList.remove('hidden'); // header.classList.add('cookies');
+
       wrapper.classList.add('cookies');
     }, 1500);
   }
@@ -244,24 +246,7 @@ AOS.init({
   duration: 4000,
   easing: 'ease',
   once: false
-}); //fullpage
-// $(document).ready(function () {
-//     $('#fullpage').fullpage({
-//       licenseKey:'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
-//       responsive: true,
-//       navigation: true,
-//       offsetSectionsKey: '65D8A1C8-B5EE4C5F-8BE60096-B2AC916A',
-//       offsetSections: true,
-//       anchors:['firstPage', 'secondPage', 'thirdPage'],
-//     onLeave: function(){
-//         $('.section [data-aos]').removeClass("aos-animate");
-//     }, 
-//     afterLoad: function(){
-//         $('.section.active [data-aos]').addClass("aos-animate");
-//     }
-//   });
-// });
-
+});
 new fullpage('#fullpage', {
   licenseKey: 'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
   responsive: true,
@@ -285,14 +270,15 @@ new fullpage('#fullpage', {
   //Scrolling
   css3: true,
   scrollingSpeed: 700,
-  fitToSection: false,
-  fitToSectionDelay: 1000,
+  // fitToSection: false,
+  // fitToSectionDelay: 1000,
   easing: 'easeInOutCubic',
   easingcss3: 'ease',
   dragAndMove: 'fingersonly',
   resetSliders: false,
-  touchSensitivity: 15,
-  normalScrollElementTouchThreshold: 5
+  touchSensitivity: 15 // normalScrollElementTouchThreshold: 5,
+  // autoScrolling: false
+
 }); //menu
 
 function menuToggle() {
@@ -364,7 +350,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55720" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58556" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

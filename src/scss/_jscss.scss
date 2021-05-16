@@ -13,8 +13,18 @@
 
 
 //fullpage.js
+
+div#fp-nav{
+  transform:rotate(90deg);
+}
+
+div#fp-nav a span {
+  background: var(--clr-umber-300) !important;
+}
+
 #fv-dots ul li {
   padding: 6px;
+
 }
 
 #fv-dots ul li a span {
@@ -108,3 +118,16 @@ animation-delay: calc(.2s + (.1s * var(--line-index)));
     opacity:1;
   }
   
+.fp-viewing-fourthPage span.word {
+  opacity:1;
+  transform:translateY(0%);
+}
+
+.fp-viewing-fourthPage .client__photo img  {
+  opacity:1;
+}
+
+
+.fp-viewing-fourthPage .client__text {
+  margin-bottom: 0;
+}

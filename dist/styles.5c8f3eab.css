@@ -121,6 +121,12 @@ table {
   opacity: 1;
   transition: 2s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
+div#fp-nav {
+  transform: rotate(90deg); }
+
+div#fp-nav a span {
+  background: var(--clr-umber-300) !important; }
+
 #fv-dots ul li {
   padding: 6px; }
 
@@ -192,6 +198,16 @@ table {
 
 .fp-viewing-thirdPage .client__photo img {
   opacity: 1; }
+
+.fp-viewing-fourthPage span.word {
+  opacity: 1;
+  transform: translateY(0%); }
+
+.fp-viewing-fourthPage .client__photo img {
+  opacity: 1; }
+
+.fp-viewing-fourthPage .client__text {
+  margin-bottom: 0; }
 
 :root {
   --clr-umber-100: #f7ede4;
@@ -274,7 +290,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16;
-  line-height: 1.4; }
+  line-height: 1.4;
+  cursor: none; }
 
 #podcast {
   max-width: 754px;
@@ -315,11 +332,19 @@ body {
 header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-top: 8em; }
+  margin-top: 8em;
+  margin-left: 5em;
+  margin-right: 5em; }
   header svg {
     margin-right: auto; }
+  @media only screen and (max-width: 65em) {
+    header {
+      margin-left: 2em;
+      margin-right: 2em; } }
   @media only screen and (max-width: 40em) {
     header {
+      margin-left: 2em;
+      margin-right: 2em;
       margin-bottom: 1em;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); } }
 
@@ -439,15 +464,6 @@ ul {
   justify-content: space-around;
   align-items: center; }
 
-.wrapper {
-  transform: translate3d(0px, -40px, 0px);
-  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
-  .wrapper.cookies {
-    transform: translate3d(0px, 15px, 0px); }
-  @media only screen and (max-width: 65em) {
-    .wrapper {
-      margin: 25px; } }
-
 .cursors div {
   position: absolute;
   top: 300px;
@@ -475,6 +491,12 @@ ul {
 
 .fade-in {
   opacity: 1; }
+
+.wrapper {
+  transform: translate3d(0px, -40px, 0px);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
+  .wrapper.cookies {
+    transform: translate3d(0px, 25px, 0px); }
 
 a {
   text-decoration: none;
@@ -510,28 +532,28 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto; }
-  main h2,
-  main a {
+  main section h2,
+  main section a {
     color: var(--clr-umber-300);
     font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
     font-size: 16px; }
     @media screen and (min-width: 480px) {
-      main h2,
-      main a {
+      main section h2,
+      main section a {
         font-size: 16px; } }
     @media screen and (min-width: 640px) {
-      main h2,
-      main a {
+      main section h2,
+      main section a {
         font-size: 16px; } }
     @media screen and (min-width: 1024px) {
-      main h2,
-      main a {
+      main section h2,
+      main section a {
         font-size: 17px; } }
-  main a {
+  main section a {
     transition: color 0.3s ease-out;
     position: relative;
     position: relative; }
-    main a::before {
+    main section a::before {
       content: "";
       position: absolute;
       bottom: 0;
@@ -544,41 +566,41 @@ main {
       transform: scaleX(1);
       transform-origin: bottom right;
       transition: transform 0.5s ease-out; }
-    main a:hover::before, main a:focus::before {
+    main section a:hover::before, main section a:focus::before {
       transform: scaleX(0);
       transform-origin: bottom right; }
-    main a::after {
+    main section a::after {
       content: url(/Vector.794dec81.svg);
       margin-left: 10px;
       top: 10px;
       border-bottom: 0;
       position: absolute; }
-  main .content__paragraph {
+  main section .content__paragraph {
     font-family: "Plantin MT Pro Light", "Times New Roman", Times, serif;
     line-height: 1.15;
     padding: 22 0 44 0;
     font-size: 21.5px; }
     @media screen and (min-width: 480px) {
-      main .content__paragraph {
+      main section .content__paragraph {
         font-size: 21.5px; } }
     @media screen and (min-width: 640px) {
-      main .content__paragraph {
+      main section .content__paragraph {
         font-size: 28px; } }
     @media screen and (min-width: 1024px) {
-      main .content__paragraph {
+      main section .content__paragraph {
         font-size: 32px; } }
     @media only screen and (max-width: 40em) {
-      main .content__paragraph {
+      main section .content__paragraph {
         padding: 22 0 22 0;
         font-size: 21.5px; } }
   @media only screen and (max-width: 40em) and (min-width: 480px) {
-    main .content__paragraph {
+    main section .content__paragraph {
       font-size: 21.5px; } }
   @media only screen and (max-width: 40em) and (min-width: 640px) {
-    main .content__paragraph {
+    main section .content__paragraph {
       font-size: 28px; } }
   @media only screen and (max-width: 40em) and (min-width: 1024px) {
-    main .content__paragraph {
+    main section .content__paragraph {
       font-size: 32px; } }
   main .links {
     display: flex;
@@ -589,17 +611,14 @@ main {
     main .links a {
       margin: 22 45px 3 45px; }
 
-div#fp-nav {
-  transform: rotate(90deg); }
-
-div#fp-nav a span {
-  background: var(--clr-umber-300) !important; }
-
 section {
-  padding: 0 93px; }
+  padding: 0 163px; }
   @media only screen and (max-width: 65em) {
     section {
-      padding: 0; } }
+      padding: 0 53px; } }
+  @media only screen and (max-width: 40em) {
+    section {
+      padding: 0 25px; } }
 
 .intro,
 .clients {
@@ -618,7 +637,7 @@ section {
       .intro .client__text,
       .clients .intro__photo,
       .clients .client__text {
-        margin-bottom: 5em; }
+        margin-bottom: 8em; }
       .intro .intro__text,
       .intro .client__photo,
       .clients .intro__text,
@@ -629,9 +648,10 @@ section {
     .clients {
       grid-gap: 0px;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-      .intro .intro, .intro .intro__text,
+      .intro .intro, .intro .intro__text, .intro .client__photo,
       .clients .intro,
-      .clients .intro__text {
+      .clients .intro__text,
+      .clients .client__photo {
         margin-top: 0em; } }
 
 .blog,
@@ -642,7 +662,7 @@ section {
   @media only screen and (max-width: 40em) {
     .blog,
     .clients {
-      margin-bottom: 2em; } }
+      margin-bottom: 0; } }
 
 .intro__photo,
 .client__photo {
@@ -674,46 +694,53 @@ section {
       .client__photo img {
         width: 100%; } }
 
-footer {
-  padding: 75px;
+#footer {
   font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
   background-color: var(--clr-green-500);
   color: var(--clr-rose-100); }
-  footer .fp-tableCell {
+  #footer .footer-wrapper {
+    padding: 75px; }
+  #footer .fp-tableCell {
     vertical-align: top; }
-  footer .contact,
-  footer .socials,
-  footer .back-to-top,
-  footer .credits {
+  #footer .contact,
+  #footer .socials,
+  #footer .back-to-top,
+  #footer .credits {
     padding: 22; }
-  footer a {
+    @media only screen and (max-width: 40em) {
+      #footer .contact,
+      #footer .socials,
+      #footer .back-to-top,
+      #footer .credits {
+        padding: 15px; } }
+  #footer a {
     color: var(--clr-rose-100);
     transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
-    footer a::after {
+    #footer a::after {
       width: 100%;
       height: 1px;
       bottom: -3px;
       left: 0;
       background-color: var(--clr-green-200);
       transform-origin: bottom left; }
-  footer .socials a {
+  #footer .socials a {
     padding: 15px; }
-    footer .socials a .fab {
+    #footer .socials a .fab {
       transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
-      footer .socials a .fab:hover {
+      #footer .socials a .fab:hover {
         transform: scale(1.25); }
-  footer .copyright a,
-  footer .credits {
+  #footer .copyright a,
+  #footer .credits {
     color: var(--clr-green-200);
-    line-height: 1.5; }
-  footer .copyright a,
-  footer .back-to-top a,
-  footer .email a {
+    line-height: 2; }
+  #footer .copyright a,
+  #footer .back-to-top a,
+  #footer .email a {
     transition: color 0.3s ease-out;
     position: relative; }
-    footer .copyright a::before,
-    footer .back-to-top a::before,
-    footer .email a::before {
+    #footer .copyright a::before,
+    #footer .back-to-top a::before,
+    #footer .email a::before {
       content: "";
       position: absolute;
       bottom: 0;
@@ -726,26 +753,26 @@ footer {
       transform: scaleX(1);
       transform-origin: bottom right;
       transition: transform 0.5s ease-out; }
-    footer .copyright a:hover::before, footer .copyright a:focus::before,
-    footer .back-to-top a:hover::before,
-    footer .back-to-top a:focus::before,
-    footer .email a:hover::before,
-    footer .email a:focus::before {
+    #footer .copyright a:hover::before, #footer .copyright a:focus::before,
+    #footer .back-to-top a:hover::before,
+    #footer .back-to-top a:focus::before,
+    #footer .email a:hover::before,
+    #footer .email a:focus::before {
       transform: scaleX(0);
       transform-origin: bottom right; }
-  footer .back-to-top a {
+  #footer .back-to-top a {
     position: relative; }
-    footer .back-to-top a::after {
+    #footer .back-to-top a::after {
       top: -15px;
       right: 65px;
       border-bottom: 0;
       position: absolute; }
   @media only screen and (max-width: 65em) {
-    footer {
+    #footer {
       padding: 25px; } }
 
 div.blog,
-footer {
+#footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -772,7 +799,7 @@ footer {
   top: 0;
   left: 0;
   right: 0;
-  padding: 1.1rem;
+  padding: 1.2rem;
   opacity: 1;
   transition: opacity 2s ease;
   background-color: var(--clr-umber-300);
