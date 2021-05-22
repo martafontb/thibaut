@@ -36,7 +36,9 @@ header {
     }
 }
 
-#logo2 {display:none}
+#logo2 {
+    display:none
+}
     
 @media all and (max-width: 786px) {
     #logo1 {display: none;}
