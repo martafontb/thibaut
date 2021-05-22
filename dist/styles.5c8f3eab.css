@@ -468,7 +468,10 @@ section .card__pod {
       section .card__pod h3 {
         font-size: 22px; } }
   section .card__pod .card__image {
-    width: 312px; }
+    width: 290px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around; }
   section .card__pod .card__text {
     min-height: 181px;
     display: flex;
@@ -1017,6 +1020,23 @@ div.blog,
       font-size: 15px; }
     #consent-popup .close {
       right: 6px; } }
+
+#manifesto h4 {
+  font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  margin: 20 0; }
+  @media screen and (min-width: 480px) {
+    #manifesto h4 {
+      font-size: 20px; } }
+  @media screen and (min-width: 640px) {
+    #manifesto h4 {
+      font-size: 26px; } }
+  @media screen and (min-width: 1024px) {
+    #manifesto h4 {
+      font-size: 28px; } }
+
+#manifesto p {
+  margin: 10px auto 25px; }
 
 
 /*# sourceMappingURL=/styles.5c8f3eab.css.map */

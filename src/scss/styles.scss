@@ -347,4 +347,14 @@ div.blog,
 }
 
 
+#manifesto {
+  h4 {
+    font-family: $sans;
+    @include font-size($h3-font-sizes);
+    margin: 20 0;
+  }
 
+  p {
+    margin: 10px auto 25px;
+  }
+}
