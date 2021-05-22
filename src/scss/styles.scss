@@ -6,7 +6,7 @@
 @import 'mixins';
 @import 'jscss';
 @import 'root';
-@import 'podcast';
+@import 'cards';
 @import 'menu';
 
 
@@ -51,14 +51,6 @@
   }
 }
 
-// .header {
-//   transform: translate3d(0px, -40px, 0px);
-//   transition: $default-transition;
-//     &.cookies {
-//       transform: translate3d(0px, 25px, 0px);
-//   }
-// }
-
 a {
   text-decoration: none;
   font-family: $sans;
@@ -74,7 +66,11 @@ p, ul, ol, a {
   @include font-size($p-font-sizes);
 }
 
-main {
+p {
+  font-family: $serif;
+}
+
+#index main {
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: auto;
@@ -194,7 +190,8 @@ overflow: hidden;
 font-family: $sans;
 background-color: var(--clr-green-500);
 color: var(--clr-rose-100);
-.footer-wrapper{
+margin-top: 5em;
+.footer-wrapper {
   padding: 75px;
 }
 .fp-tableCell{
@@ -262,6 +259,9 @@ div.blog,
   @include flexCenter(column);
   justify-content: space-around;
   text-align: center;
+  p{
+    font-family: $sans;
+  }
 }
 
 
@@ -295,14 +295,15 @@ div.blog,
   transition: opacity 2s ease;
   background-color:var(--clr-umber-300);
   color: var(--clr-rose-100);
-  font-family: $sans;
   z-index: 2;
     a {
       color: var(--clr-rose-100);
       border-bottom: 1px solid var(--clr-rose-100);
+      font-size: 16px;
     }
     p {
       font-size: 16px;
+      font-family: $sans;
     }
     .close {
       position: relative;
@@ -344,5 +345,6 @@ div.blog,
       }
     }
 }
+
 
 

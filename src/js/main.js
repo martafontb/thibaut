@@ -20,14 +20,11 @@ const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 window.onload = () => {
   const consentPopup = document.getElementById('consent-popup');
   const acceptBtn = document.getElementById('accept');
-  const wrapper = document.getElementById('wrapper')
-  // const header = document.getElementById('header')
-
+  const wrapper = document.getElementById('wrapper');
 
   const acceptFn = event => {
     saveToStorage(storageType);
     consentPopup.classList.add('hidden');
-    // header.classList.remove('cookies');
     wrapper.classList.remove('cookies');
   }
   acceptBtn.addEventListener('click', acceptFn);
@@ -35,7 +32,6 @@ window.onload = () => {
    if(shouldShowPopup()) {
      setTimeout(() => {
       consentPopup.classList.remove('hidden');
-      // header.classList.add('cookies');
       wrapper.classList.add('cookies');
      }, 1500);
    }
@@ -153,17 +149,20 @@ function menuToggle(){
   const menu = document.getElementById('menu-overlay');
   const fpNav = document.getElementById('fp-nav');
   const nav = document.querySelector('nav');
+
   menu.classList.toggle('active')
   nav.classList.toggle('dark')
+
  
   if (menu.classList.contains("active")) {   
     fpNav.style.opacity = 0;
-    
+
     gsap.to(".burger-top", { rotation: 45, transformOrigin: "50% 50%", y: 8 })
     gsap.to(".burger-bottom", { rotation: -45, transformOrigin: "50% 50%", y: -8 })
     gsap.to(".burger-mid", { width: 0 })
   } else {
     fpNav.style.opacity = 1;
+
 
     gsap.to(".burger-top", { rotation: 0, y: 0 })
     gsap.to(".burger-bottom", { rotation: 0, y: 0 })

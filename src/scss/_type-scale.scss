@@ -17,11 +17,32 @@ $type-scale:(
     )
 );
 
+$p-date-font-sizes: (
+  null  : 14px,
+  480px : 14px,
+  640px : 14px,
+  1024px: 14px
+);
+
 $p-font-sizes: (
   null  : 16px,
   480px : 16px,
   640px : 16px,
   1024px: 17px
+);
+
+$p-header-font-sizes:(
+  null  : 18px,
+  480px : 18px,
+  640px : 20px,
+  1024px: 22px
+);
+
+$h3-font-sizes:(
+  null  : 20px,
+  480px : 20px,
+  640px : 26px,
+  1024px: 28px
 );
 
 $intro-font-sizes: (

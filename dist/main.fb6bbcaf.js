@@ -167,12 +167,11 @@ var saveToStorage = function saveToStorage() {
 window.onload = function () {
   var consentPopup = document.getElementById('consent-popup');
   var acceptBtn = document.getElementById('accept');
-  var wrapper = document.getElementById('wrapper'); // const header = document.getElementById('header')
+  var wrapper = document.getElementById('wrapper');
 
   var acceptFn = function acceptFn(event) {
     saveToStorage(storageType);
-    consentPopup.classList.add('hidden'); // header.classList.remove('cookies');
-
+    consentPopup.classList.add('hidden');
     wrapper.classList.remove('cookies');
   };
 
@@ -180,8 +179,7 @@ window.onload = function () {
 
   if (shouldShowPopup()) {
     setTimeout(function () {
-      consentPopup.classList.remove('hidden'); // header.classList.add('cookies');
-
+      consentPopup.classList.remove('hidden');
       wrapper.classList.add('cookies');
     }, 1500);
   }
@@ -350,7 +348,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58556" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55363" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

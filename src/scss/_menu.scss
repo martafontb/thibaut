@@ -2,7 +2,7 @@
 header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-top: 8em;
+    margin-top: 6em;
     margin-left: 5em;
     margin-right: 5em;
     svg {
@@ -19,6 +19,12 @@ header {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
+
+#index {
+        header {
+            margin-top: 7em;
+        }
+    }
 
 #logo1 {
     display:block;
@@ -67,7 +73,7 @@ nav {
         #menu-overlay {
         display:block;
         position:fixed;
-        top:-32px;
+        top:-52px;
         z-index:20;
         height:100vh;
         width: 100vw;
@@ -79,7 +85,6 @@ nav {
         transform-origin: bottom;
         opacity: 0;
         transition: all .3s ease-out;
-
             ul {
                 height: 500px;
                 @include flexCenter(column);

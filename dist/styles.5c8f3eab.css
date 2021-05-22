@@ -293,31 +293,196 @@ body {
   line-height: 1.4;
   cursor: none; }
 
-#podcast {
-  max-width: 754px;
+.page__title {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-right: auto;
-  margin-left: auto; }
+  padding: 70px 0px 100px; }
+  .page__title h2 {
+    font-size: 28px;
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
+    @media screen and (min-width: 480px) {
+      .page__title h2 {
+        font-size: 28px; } }
+    @media screen and (min-width: 640px) {
+      .page__title h2 {
+        font-size: 32px; } }
+    @media screen and (min-width: 1024px) {
+      .page__title h2 {
+        font-size: 40px; } }
+  .page__title p {
+    font-size: 18px;
+    max-width: 659px;
+    text-align: center;
+    margin-top: 35px; }
+    @media screen and (min-width: 480px) {
+      .page__title p {
+        font-size: 18px; } }
+    @media screen and (min-width: 640px) {
+      .page__title p {
+        font-size: 20px; } }
+    @media screen and (min-width: 1024px) {
+      .page__title p {
+        font-size: 22px; } }
+    @media only screen and (max-width: 40em) {
+      .page__title p {
+        max-width: 276px; } }
 
-.page_header {
+section .card {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: row;
+  column-gap: 25px;
+  background: var(--clr-umber-200);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 0 auto 2.5em; }
+  section .card h3 {
+    margin: 15px 0 10px;
+    font-size: 20px; }
+    @media screen and (min-width: 480px) {
+      section .card h3 {
+        font-size: 20px; } }
+    @media screen and (min-width: 640px) {
+      section .card h3 {
+        font-size: 26px; } }
+    @media screen and (min-width: 1024px) {
+      section .card h3 {
+        font-size: 28px; } }
+  section .card p {
+    color: var(--clr-green-300); }
+  section .card :where(h3, p.card__date, .card__tags) {
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
+    section .card :where(h3, p.card__date, .card__tags) :where(p.card__date, .card__tags) {
+      font-size: 14px; }
+      @media screen and (min-width: 480px) {
+        section .card :where(h3, p.card__date, .card__tags) :where(p.card__date, .card__tags) {
+          font-size: 14px; } }
+      @media screen and (min-width: 640px) {
+        section .card :where(h3, p.card__date, .card__tags) :where(p.card__date, .card__tags) {
+          font-size: 14px; } }
+      @media screen and (min-width: 1024px) {
+        section .card :where(h3, p.card__date, .card__tags) :where(p.card__date, .card__tags) {
+          font-size: 14px; } }
+  section .card .card__copy {
+    margin: 25px 0;
+    font-size: 18px; }
+    @media screen and (min-width: 480px) {
+      section .card .card__copy {
+        font-size: 18px; } }
+    @media screen and (min-width: 640px) {
+      section .card .card__copy {
+        font-size: 20px; } }
+    @media screen and (min-width: 1024px) {
+      section .card .card__copy {
+        font-size: 22px; } }
+  section .card .tag {
+    background: #F2E2D7;
+    border-radius: 2px;
+    padding: 2px 5px;
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
+    color: var(--clr-umber-300); }
 
-/* podcast cards */
-.visual__podcast {
-  height: 302px;
-  width: 100%;
-  background: wheat;
-  margin: 0.5rem 0; }
+a.card__cta {
+  position: relative;
+  margin-right: auto;
+  transition: color 0.3s ease-out;
+  position: relative; }
+  a.card__cta::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(1);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out; }
+  a.card__cta:hover::before, a.card__cta:focus::before {
+    transform: scaleX(0);
+    transform-origin: bottom right; }
+  a.card__cta::after {
+    content: url(/Vector.794dec81.svg);
+    margin-left: 10px;
+    top: 10px;
+    border-bottom: 0;
+    position: absolute; }
+
+.card__image {
+  max-width: 500px; }
+  @media only screen and (max-width: 40em) {
+    .card__image {
+      width: 275px;
+      overflow: hidden;
+      object-fit: cover;
+      object-position: center; } }
+
+@media only screen and (max-width: 65em) {
+  .post__hero .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 35px; } }
+
+section.post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  grid-gap: 45px; }
+  section.post .card {
+    max-width: 362px;
+    overflow: hidden;
+    margin: auto; }
+  @media only screen and (max-width: 40em) {
+    section.post {
+      grid-template-columns: 1fr;
+      grid-gap: 35px; } }
+
+section.podcast {
+  max-width: 754;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 30px; }
+  @media only screen and (max-width: 40em) {
+    section.podcast .card {
+      max-width: 250px; } }
+
+section .card__pod {
+  display: flex;
+  flex-direction: column; }
+  section .card__pod h3 {
+    font-size: 18px; }
+    @media screen and (min-width: 480px) {
+      section .card__pod h3 {
+        font-size: 18px; } }
+    @media screen and (min-width: 640px) {
+      section .card__pod h3 {
+        font-size: 20px; } }
+    @media screen and (min-width: 1024px) {
+      section .card__pod h3 {
+        font-size: 22px; } }
+  section .card__pod .card__image {
+    width: 312px; }
+  section .card__pod .card__text {
+    min-height: 181px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: space-between; }
+  section .card__pod .card__cta {
+    margin-top: 25px; }
 
 .card__client {
   width: clamp(23ch, 20%, 46ch);
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background: lightpink;
   padding: 1rem; }
@@ -332,7 +497,7 @@ body {
 header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-top: 8em;
+  margin-top: 6em;
   margin-left: 5em;
   margin-right: 5em; }
   header svg {
@@ -347,6 +512,9 @@ header {
       margin-right: 2em;
       margin-bottom: 1em;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); } }
+
+#index header {
+  margin-top: 7em; }
 
 #logo1 {
   display: block; }
@@ -414,7 +582,7 @@ nav {
     nav #menu-overlay {
       display: block;
       position: fixed;
-      top: -32px;
+      top: -52px;
       z-index: 20;
       height: 100vh;
       width: 100vw;
@@ -528,32 +696,35 @@ p, ul, ol, a {
     p, ul, ol, a {
       font-size: 17px; } }
 
-main {
+p {
+  font-family: "Plantin MT Pro Light", "Times New Roman", Times, serif; }
+
+#index main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto; }
-  main section h2,
-  main section a {
+  #index main section h2,
+  #index main section a {
     color: var(--clr-umber-300);
     font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
     font-size: 16px; }
     @media screen and (min-width: 480px) {
-      main section h2,
-      main section a {
+      #index main section h2,
+      #index main section a {
         font-size: 16px; } }
     @media screen and (min-width: 640px) {
-      main section h2,
-      main section a {
+      #index main section h2,
+      #index main section a {
         font-size: 16px; } }
     @media screen and (min-width: 1024px) {
-      main section h2,
-      main section a {
+      #index main section h2,
+      #index main section a {
         font-size: 17px; } }
-  main section a {
+  #index main section a {
     transition: color 0.3s ease-out;
     position: relative;
     position: relative; }
-    main section a::before {
+    #index main section a::before {
       content: "";
       position: absolute;
       bottom: 0;
@@ -566,49 +737,49 @@ main {
       transform: scaleX(1);
       transform-origin: bottom right;
       transition: transform 0.5s ease-out; }
-    main section a:hover::before, main section a:focus::before {
+    #index main section a:hover::before, #index main section a:focus::before {
       transform: scaleX(0);
       transform-origin: bottom right; }
-    main section a::after {
+    #index main section a::after {
       content: url(/Vector.794dec81.svg);
       margin-left: 10px;
       top: 10px;
       border-bottom: 0;
       position: absolute; }
-  main section .content__paragraph {
+  #index main section .content__paragraph {
     font-family: "Plantin MT Pro Light", "Times New Roman", Times, serif;
     line-height: 1.15;
     padding: 22 0 44 0;
     font-size: 21.5px; }
     @media screen and (min-width: 480px) {
-      main section .content__paragraph {
+      #index main section .content__paragraph {
         font-size: 21.5px; } }
     @media screen and (min-width: 640px) {
-      main section .content__paragraph {
+      #index main section .content__paragraph {
         font-size: 28px; } }
     @media screen and (min-width: 1024px) {
-      main section .content__paragraph {
+      #index main section .content__paragraph {
         font-size: 32px; } }
     @media only screen and (max-width: 40em) {
-      main section .content__paragraph {
+      #index main section .content__paragraph {
         padding: 22 0 22 0;
         font-size: 21.5px; } }
   @media only screen and (max-width: 40em) and (min-width: 480px) {
-    main section .content__paragraph {
+    #index main section .content__paragraph {
       font-size: 21.5px; } }
   @media only screen and (max-width: 40em) and (min-width: 640px) {
-    main section .content__paragraph {
+    #index main section .content__paragraph {
       font-size: 28px; } }
   @media only screen and (max-width: 40em) and (min-width: 1024px) {
-    main section .content__paragraph {
+    #index main section .content__paragraph {
       font-size: 32px; } }
-  main .links {
+  #index main .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     min-width: 250px; }
-    main .links a {
+    #index main .links a {
       margin: 22 45px 3 45px; }
 
 section {
@@ -697,7 +868,8 @@ section {
 #footer {
   font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
   background-color: var(--clr-green-500);
-  color: var(--clr-rose-100); }
+  color: var(--clr-rose-100);
+  margin-top: 5em; }
   #footer .footer-wrapper {
     padding: 75px; }
   #footer .fp-tableCell {
@@ -779,6 +951,9 @@ div.blog,
   flex-direction: column;
   justify-content: space-around;
   text-align: center; }
+  div.blog p,
+  #footer p {
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
 
 /* 48em = 768px */
 @media (min-width: 48em) {
@@ -804,13 +979,14 @@ div.blog,
   transition: opacity 2s ease;
   background-color: var(--clr-umber-300);
   color: var(--clr-rose-100);
-  font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
   z-index: 2; }
   #consent-popup a {
     color: var(--clr-rose-100);
-    border-bottom: 1px solid var(--clr-rose-100); }
-  #consent-popup p {
+    border-bottom: 1px solid var(--clr-rose-100);
     font-size: 16px; }
+  #consent-popup p {
+    font-size: 16px;
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
   #consent-popup .close {
     position: relative;
     right: 0px;
