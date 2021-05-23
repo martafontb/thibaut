@@ -137,11 +137,14 @@ section.podcast {
     }
   }
 
-  .card__client {
-    width: clamp(23ch, 20%, 46ch);
+
+  .client_section {
     @include flexCenter(column);
-    background: lightpink;
-    padding: 1rem;
+    gap:95px;
+  }
+  .client__card {
+    @include flexCenter(row);
+    gap:95px;
   }
 
   .card__text {
@@ -149,4 +152,23 @@ section.podcast {
     flex-direction: column;
     justify-content: center;
     padding: 0.5rem ;
+    p {
+      color: var(--clr-green-200);
+      margin: 25px 0;
+    }
+  }
+
+  
+  a.client__cta {
+    position: relative;
+    margin-right:auto;
+    color: var(--clr-green-400);
+    @include hover-line-revers;
+        &::after {
+        content:url(../img/Vector.svg);
+        margin-left:10px;
+        top:10px;
+        border-bottom:0;
+        position: absolute;
+    }
   }

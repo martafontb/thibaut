@@ -190,7 +190,7 @@ overflow: hidden;
 font-family: $sans;
 background-color: var(--clr-green-500);
 color: var(--clr-rose-100);
-margin-top: 5em;
+margin-top:auto;
 .footer-wrapper {
   padding: 75px;
 }
@@ -348,7 +348,8 @@ div.blog,
 
 
 #manifesto {
-  h4 {
+  margin-bottom:0;
+  h4, h3 {
     font-family: $sans;
     @include font-size($h3-font-sizes);
     margin: 20 0;
@@ -356,5 +357,44 @@ div.blog,
 
   p {
     margin: 10px auto 25px;
+  }
+  section.about {
+    background-color: var(--clr-umber-300);
+    padding: 75px 169px;
+  }
+  .about__wrapper {
+    max-width: 940px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 95px;
+    margin:auto;
+  }
+
+  .about__image {
+    margin: 20 0;
+  }
+  .about__text {
+    max-width: 440px;
+    overflow: hidden;
+    p {
+      @include font-size($p-header-font-sizes);
+    }
+
+    a.info-toggle {
+      position: relative;
+      margin-right:auto;
+      @include hover-line-revers;
+          &::after {
+          content:url(../img/Vector.svg);
+          margin-left:10px;
+          top:10px;
+          border-bottom:0;
+          position: absolute;
+          }
+    }
+    .about__open {
+      overflow: hidden;
+    }
   }
 }

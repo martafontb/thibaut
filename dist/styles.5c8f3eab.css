@@ -481,20 +481,57 @@ section .card__pod {
   section .card__pod .card__cta {
     margin-top: 25px; }
 
-.card__client {
-  width: clamp(23ch, 20%, 46ch);
+.client_section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightpink;
-  padding: 1rem; }
+  gap: 95px; }
+
+.client__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 95px; }
 
 .card__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0.5rem; }
+  .card__text p {
+    color: var(--clr-green-200);
+    margin: 25px 0; }
+
+a.client__cta {
+  position: relative;
+  margin-right: auto;
+  color: var(--clr-green-400);
+  transition: color 0.3s ease-out;
+  position: relative; }
+  a.client__cta::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(1);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out; }
+  a.client__cta:hover::before, a.client__cta:focus::before {
+    transform: scaleX(0);
+    transform-origin: bottom right; }
+  a.client__cta::after {
+    content: url(/Vector.794dec81.svg);
+    margin-left: 10px;
+    top: 10px;
+    border-bottom: 0;
+    position: absolute; }
 
 /* menu */
 header {
@@ -872,7 +909,7 @@ section {
   font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
   background-color: var(--clr-green-500);
   color: var(--clr-rose-100);
-  margin-top: 5em; }
+  margin-top: auto; }
   #footer .footer-wrapper {
     padding: 75px; }
   #footer .fp-tableCell {
@@ -1021,22 +1058,78 @@ div.blog,
     #consent-popup .close {
       right: 6px; } }
 
-#manifesto h4 {
-  font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  margin: 20 0; }
-  @media screen and (min-width: 480px) {
-    #manifesto h4 {
-      font-size: 20px; } }
-  @media screen and (min-width: 640px) {
-    #manifesto h4 {
-      font-size: 26px; } }
-  @media screen and (min-width: 1024px) {
-    #manifesto h4 {
-      font-size: 28px; } }
-
-#manifesto p {
-  margin: 10px auto 25px; }
+#manifesto {
+  margin-bottom: 0; }
+  #manifesto h4, #manifesto h3 {
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    margin: 20 0; }
+    @media screen and (min-width: 480px) {
+      #manifesto h4, #manifesto h3 {
+        font-size: 20px; } }
+    @media screen and (min-width: 640px) {
+      #manifesto h4, #manifesto h3 {
+        font-size: 26px; } }
+    @media screen and (min-width: 1024px) {
+      #manifesto h4, #manifesto h3 {
+        font-size: 28px; } }
+  #manifesto p {
+    margin: 10px auto 25px; }
+  #manifesto section.about {
+    background-color: var(--clr-umber-300);
+    padding: 75px 169px; }
+  #manifesto .about__wrapper {
+    max-width: 940px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 95px;
+    margin: auto; }
+  #manifesto .about__image {
+    margin: 20 0; }
+  #manifesto .about__text {
+    max-width: 440px;
+    overflow: hidden; }
+    #manifesto .about__text p {
+      font-size: 18px; }
+      @media screen and (min-width: 480px) {
+        #manifesto .about__text p {
+          font-size: 18px; } }
+      @media screen and (min-width: 640px) {
+        #manifesto .about__text p {
+          font-size: 20px; } }
+      @media screen and (min-width: 1024px) {
+        #manifesto .about__text p {
+          font-size: 22px; } }
+    #manifesto .about__text a.info-toggle {
+      position: relative;
+      margin-right: auto;
+      transition: color 0.3s ease-out;
+      position: relative; }
+      #manifesto .about__text a.info-toggle::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        bottom: -3px;
+        left: 0;
+        background-color: currentColor;
+        transform: scaleX(1);
+        transform-origin: bottom right;
+        transition: transform 0.5s ease-out; }
+      #manifesto .about__text a.info-toggle:hover::before, #manifesto .about__text a.info-toggle:focus::before {
+        transform: scaleX(0);
+        transform-origin: bottom right; }
+      #manifesto .about__text a.info-toggle::after {
+        content: url(/Vector.794dec81.svg);
+        margin-left: 10px;
+        top: 10px;
+        border-bottom: 0;
+        position: absolute; }
+    #manifesto .about__text .about__open {
+      overflow: hidden; }
 
 
 /*# sourceMappingURL=/styles.5c8f3eab.css.map */
