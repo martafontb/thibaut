@@ -137,26 +137,28 @@ section.podcast {
     }
   }
 
-
   .client_section {
     @include flexCenter(column);
-    gap:95px;
+    gap: 200px 95px;
+    margin-bottom: 5em;
   }
   .client__card {
     @include flexCenter(row);
     gap:95px;
+    padding: 40px;
   }
 
-  .card__text {
+  .card__words {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0.5rem ;
   }
 
-  .client__text p {
-    color: var(--clr-green-200);
+  .client__words p {
+    color: var(--clr-green-300);
     padding: 25px 0;
+    @include font-size($p-header-font-sizes);
   }
 
   a.client__cta {
