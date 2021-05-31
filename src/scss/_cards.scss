@@ -23,7 +23,7 @@
   column-gap: 25px;
   background:var(--clr-umber-200);
   border-radius: 10px;
-  padding: 25px;
+  padding: 30px;
   margin: 0 auto 2.5em;
   h3 {
     margin: 15px 0 10px;
@@ -88,8 +88,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    grid-gap: 45px;
-
+    row-gap: 150px;
+    column-gap: 45px;
+    margin-bottom: 15em;
     .card {
       max-width: 362px;
       overflow: hidden;
@@ -140,7 +141,7 @@ section.podcast {
   .client_section {
     @include flexCenter(column);
     gap: 200px 95px;
-    margin-bottom: 5em;
+    margin-bottom: 10em;
   }
   .client__card {
     @include flexCenter(row);

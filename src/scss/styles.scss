@@ -191,16 +191,23 @@ font-family: $sans;
 background-color: var(--clr-green-500);
 color: var(--clr-rose-100);
 margin-top:auto;
-.footer-wrapper {
-  padding: 75px;
+.footer_wrapper {
+  padding: 80px;
 }
 .fp-tableCell{
   vertical-align: top;
 }
+
+.copyright {
+  @include flexCenter(row);
+  p, a {
+    font-size: 14px;
+  }
+}
   .contact,
   .socials,
   .back-to-top,
-  .credits {
+  .copyright {
     padding: $line-height-base;
     @include mq(small) {
       padding:15px;
@@ -227,8 +234,7 @@ margin-top:auto;
       }
     }
   }
-  .copyright a,
-  .credits {
+  .copyright a {
     color: var(--clr-green-200);
     line-height: 2;
   }
@@ -349,15 +355,36 @@ div.blog,
 
 #manifesto {
   margin-bottom:0;
-  h4, h3 {
-    font-family: $sans;
-    @include font-size($h3-font-sizes);
-    margin: 20 0;
+  transform: translate3d(0px, 40px, 0px);
+  .page__title {
+    padding: 70px 0px 0px 0px;
+    h2 {
+      padding-bottom: 35px;
+    }
+    }
+
+    h4, h3 {
+      font-family: $sans;
+      @include font-size($h3-font-sizes);
+      margin: 20 0;
+    }
+    p {
+      margin: 10px auto 25px;
+      @include font-size($p-header-font-sizes);
+    }
+
+  .page__body {
+    margin-bottom: 10em;
+    h4, p {
+      max-width: 659px;
+      text-align: center;
+      margin: 35px auto;
+      @include mq(small) {
+        max-width: 276px;
+      }
+    }
   }
 
-  p {
-    margin: 10px auto 25px;
-  }
   section.about {
     background-color: var(--clr-umber-300);
     padding: 75px 169px;
@@ -370,7 +397,6 @@ div.blog,
     gap: 95px;
     margin:auto;
   }
-
   .about__image {
     margin: 20 0;
   }
@@ -385,12 +411,17 @@ div.blog,
       position: relative;
       margin-right:auto;
       @include hover-line-revers;
+          &::before {
+            background-color: var(--clr-rose-100);
+            bottom: -1px;
+          }
           &::after {
           content:url(../img/Vector.svg);
           margin-left:10px;
           top:10px;
           border-bottom:0;
           position: absolute;
+      
           }
     }
     .about__open {
@@ -407,12 +438,14 @@ div.blog,
 #blog-post .hero-image {
   margin-top: 35px;
   background-image: url("../img/katherine.png");
-  height: 80vh;
-  min-height: 20vh;
+  min-height: 30vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: sticky;
+  top:0;
+  z-index: 2;
 }
 
 #blog-post .blog-post__header {
@@ -481,6 +514,9 @@ div.blog,
         @include flexCenter(column);
         align-items: flex-start;
         color: var(--clr-green-400);
+        li {
+          line-height: 1.5;
+        }
       }
 
     }
@@ -496,4 +532,6 @@ div.blog,
   display: grid;
   grid-gap: 48px;
   grid-template: auto 1fr auto;
+  @include font-size($p-header-font-sizes);
+  max-width: 706px;
 }
