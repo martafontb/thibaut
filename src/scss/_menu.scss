@@ -87,6 +87,7 @@ nav {
         height:100vh;
         width: 100vw;
         background-color: var(--clr-green-500);
+        overflow: hidden;
         @include flexCenter(column);
         justify-content: center;
         align-items: center;
