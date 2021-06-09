@@ -68,14 +68,21 @@ nav {
     @include flexCenter(row);
         a {
         color:var(--clr-green-500);
-        @include hover-line();
+        @include hover-line();  
+
+            i {
+                transition: $default-transition;
+                &:hover {
+                    transform: scale(1.25);
+                }
+            }
         }
+
         @include mq(small) {
-        
         #menu-overlay {
         display:block;
         position:fixed;
-        top:-52px;
+        top:-56px;
         z-index:20;
         height:100vh;
         width: 100vw;
@@ -100,6 +107,10 @@ nav {
                 color: var(--clr-rose-100);
                 i {
                     color: var(--clr-rose-100);
+                    transition: $default-transition;
+                    &:hover {
+                        transform: scale(1.25);
+                    }
                 }
             }
         }

@@ -118,6 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
+var _fullpage;
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -204,6 +206,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 var cursorTag = document.querySelector("div.cursors");
 var balls = cursorTag.querySelectorAll("div");
 var cta = document.querySelectorAll("a");
+var footer = document.getElementById("footer[data-hover]");
 var aimX = 0;
 var aimY = 0;
 balls.forEach(function (ball, index) {
@@ -236,17 +239,21 @@ cta.forEach(function (cta) {
       return cursor.style.backgroundColor = "rgba(202,207,199, 0.1)";
     });
   });
-}); //splitting
+}); // footer.addEventListener("mouseover", function(){
+//   cursor.classList.add("dark");
+// })
+//splitting
 
 Splitting(); //aos
 
 AOS.init({
-  duration: 4000,
+  duration: 5000,
   easing: 'ease',
   once: false
 });
-new fullpage('#fullpage', {
+new fullpage('#fullpage', (_fullpage = {
   licenseKey: 'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
+  scrollingSpeed: 800,
   responsive: true,
   navigation: true,
   slidesNavigation: true,
@@ -266,18 +273,8 @@ new fullpage('#fullpage', {
   animateAnchor: true,
   recordHistory: false,
   //Scrolling
-  css3: true,
-  scrollingSpeed: 700,
-  // fitToSection: false,
-  // fitToSectionDelay: 1000,
-  easing: 'easeInOutCubic',
-  easingcss3: 'ease',
-  dragAndMove: 'fingersonly',
-  resetSliders: false,
-  touchSensitivity: 15 // normalScrollElementTouchThreshold: 5,
-  // autoScrolling: false
-
-}); //menu
+  css3: true
+}, _defineProperty(_fullpage, "scrollingSpeed", 800), _defineProperty(_fullpage, "easing", 'easeInOutCubic'), _defineProperty(_fullpage, "easingcss3", 'ease'), _defineProperty(_fullpage, "dragAndMove", 'fingersonly'), _defineProperty(_fullpage, "resetSliders", false), _defineProperty(_fullpage, "touchSensitivity", 15), _fullpage)); //menu
 
 function menuToggle() {
   var menu = document.getElementById('menu-overlay');
@@ -327,6 +324,7 @@ document.querySelector(".expander").addEventListener("click", animateIt);
 var tl = gsap.timeline();
 tl.from(".about__open", {
   height: 0,
+  duration: 2,
   ease: "power3.inOut"
 });
 tl.reversed(true);
@@ -340,8 +338,6 @@ function animateIt() {
   } else {
     infoToggle.innerHTML = "Toon minder";
   }
-
-  ;
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -371,7 +367,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56109" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61814" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

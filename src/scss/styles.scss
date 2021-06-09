@@ -21,7 +21,7 @@
  z-index:10000;
  pointer-events: none;
  transform: translate(-50%, -50%);
-  &:last-child::before {
+  &:first-child::before {
     content:url(../img/vector-4.svg);
     margin-left:10px;
     top:10px;
@@ -75,8 +75,7 @@ display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: auto;
   section {
-    h2,
-    a {
+    h2 {
       color:var(--clr-umber-300);
       font-family: $sans;
       @include font-size($p-font-sizes);
@@ -84,12 +83,18 @@ grid-template-rows: auto;
     a {
       @include hover-line-revers;
       position:relative;
+      font-family: $sans;
+      @include font-size($p-font-sizes);
+      color:var(--clr-green-500);
       &::after {
       content:url(../img/Vector.svg);
       margin-left:10px;
       top:10px;
       border-bottom:0;
       position: absolute;
+      }
+      &:hover{
+        color:var(--clr-umber-300);
       }
     }
   .content__paragraph {
@@ -178,7 +183,7 @@ overflow: hidden;
   place-items: center;
    img {
      width: 80%;
-     animation: fadein 2s;
+     animation: fadein 4s;
      @include aspect-ratio(1, 1);
       @include mq(mid) {
         width: 100%;
@@ -388,6 +393,9 @@ div.blog,
   section.about {
     background-color: var(--clr-umber-300);
     padding: 75px 169px;
+    @include mq(small) {
+      padding: 0px;
+    }
   }
   .about__wrapper {
     max-width: 940px;
@@ -396,9 +404,18 @@ div.blog,
     align-items: flex-start;
     gap: 95px;
     margin:auto;
+    @include mq(small) {
+      padding: 20px;
+      flex-direction: column;
+      gap: 35px;
+ 
+    }
   }
-  .about__image {
+  .about__img {
     margin: 20 0;
+    img {
+      max-width: 100%;
+    }
   }
   .about__text {
     max-width: 440px;
@@ -416,7 +433,7 @@ div.blog,
             bottom: -1px;
           }
           &::after {
-          content:url(../img/Vector.svg);
+          content:url(../img/vector-white.svg);
           margin-left:10px;
           top:10px;
           border-bottom:0;
@@ -426,6 +443,9 @@ div.blog,
     }
     .about__open {
       overflow: hidden;
+      @include mq(small) {
+      height: 460px;
+      }
     }
   }
 }

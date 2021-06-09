@@ -8,7 +8,7 @@
 .lazyloaded,
 .image {
   opacity: 1;
-  transition: 2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 2.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 
@@ -71,7 +71,7 @@ div#fp-nav a span {
   }
 
   [data-anchor="firstPage"] .intro__photo { 
-    animation: fade-in 1s forwards;
+    animation: fade-in 3s forwards;
     opacity:0;
     @keyframes fade-in {
       from {
@@ -86,32 +86,32 @@ div#fp-nav a span {
 
   [data-anchor="secondPage"] {
     span.word {
-      transform:translateY(200%);
+      transform:translateY(150%);
       opacity:0;
       transition: all 1.1s ease-in;
     }
 }
 
 .fp-viewing-secondPage span.word  {
-  animation: slide-up 1s forwards;
-  animation-delay: calc(.2s + (.1s * var(--line-index)));
+  animation: slide-up 2s forwards;
+  animation-delay: calc(.3s + (.15s * var(--line-index)));
 }
 
 [data-anchor="thirdPage"] {
   span.word {
     transform:translateY(200%);
     opacity:0;
-    transition: all 1.1s ease-in;
+    transition: all 1.5s ease-in;
   }
   .client__photo img {
     opacity:0;
-    transition: all 1.1s ease-in;
+    transition: all 2.5s ease-in;
   }
 }
 
 .fp-viewing-thirdPage span.word  {
 animation: slide-up 2s forwards;
-animation-delay: calc(.2s + (.1s * var(--line-index)));
+animation-delay: calc(.3s + (.15s * var(--line-index)));
 }
 
 .fp-viewing-thirdPage .client__photo img  {
@@ -130,4 +130,10 @@ animation-delay: calc(.2s + (.1s * var(--line-index)));
 
 .fp-viewing-fourthPage .client__text {
   margin-bottom: 0;
+}
+
+
+
+body.profile-open {
+
 }

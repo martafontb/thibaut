@@ -56,8 +56,10 @@ const lazy = () => {
 
 //cursor 
 const cursorTag = document.querySelector("div.cursors") 
+
 const balls = cursorTag.querySelectorAll("div")
 const cta = document.querySelectorAll("a")
+const footer = document.getElementById("footer[data-hover]")
 
 let aimX = 0
 let aimY = 0
@@ -96,18 +98,23 @@ cta.forEach(cta => {
   })
 })
 
+// footer.addEventListener("mouseover", function(){
+//   cursor.classList.add("dark");
+// })
+
 //splitting
 Splitting();
 
 //aos
 AOS.init({
-  duration: 4000, 
+  duration: 5000, 
   easing: 'ease', 
   once: false
 });
 
   new fullpage('#fullpage', {
   licenseKey:'E356F0DB-C2C14CBF-ABA0A6DC-6D7D1407',
+  scrollingSpeed: 800,
   responsive: true,
   navigation: true,
   slidesNavigation: true,
@@ -131,7 +138,7 @@ AOS.init({
 
   //Scrolling
   css3: true,
-  scrollingSpeed: 700,
+  scrollingSpeed: 800,
   // fitToSection: false,
   // fitToSectionDelay: 1000,
   easing: 'easeInOutCubic',
@@ -183,6 +190,7 @@ document.querySelector(".expander").addEventListener("click", animateIt);
 const tl = gsap.timeline();
 tl.from(".about__open",{
   height: 0,
+  duration: 2,
   ease:"power3.inOut"
 });
 tl.reversed(true);
@@ -190,11 +198,9 @@ tl.reversed(true);
 function animateIt() {
   tl.reversed(!tl.reversed())
     body.classList.toggle('profile-open')
-
     if(body.classList.contains('profile-open')){
       infoToggle.innerHTML = "Toon meer"
     } else {
       infoToggle.innerHTML = "Toon minder"
     }
-  ;
 }
