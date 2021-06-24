@@ -173,6 +173,9 @@ section.podcast {
       overflow:hidden;
       object-fit: cover;
       object-position: center;
+      img {
+        width:100%;
+      }
     }
   }
   .card__words {

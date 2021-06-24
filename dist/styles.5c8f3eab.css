@@ -155,6 +155,9 @@ div#fp-nav a span {
     transform: translateY(0%);
     opacity: 1; } }
 
+[data-anchor="firstPage"] {
+  margin-top: 30px; }
+
 [data-anchor="firstPage"] span.word {
   animation: slide-up 1.5s forwards;
   animation-delay: calc(.2s + (.1s * var(--line-index)));
@@ -533,7 +536,9 @@ section .card__pod {
       width: 275px !important;
       overflow: hidden;
       object-fit: cover;
-      object-position: center; } }
+      object-position: center; }
+      .card__image img {
+        width: 100%; } }
 
 .card__words {
   display: flex;
