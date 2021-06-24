@@ -71,9 +71,9 @@ p {
 }
 
 #index main {
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: auto;
+// display: grid;
+// grid-template-columns: 1fr;
+// grid-template-rows: auto;
   section {
     h2 {
       color:var(--clr-umber-300);
@@ -135,6 +135,7 @@ padding: 0 163px;
 
 
 .intro,
+.podcast-main,
 .clients {
 height:100%;
 display: grid;
@@ -145,10 +146,6 @@ overflow: hidden;
   @include mq(mid){
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     grid-gap: 0px;
-    .intro__photo,
-    .client__text {
-      margin-bottom:8em;
-    }
     .intro__text,
     .client__photo{
       margin-top:2em;
@@ -158,21 +155,32 @@ overflow: hidden;
     .intro, .intro__text, .client__photo {
       margin-top:0em;
     }
+
     grid-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
-
-.blog,
+.intro,
+.podcast-main,
 .clients {
-  margin-bottom: 6em;
   overflow: hidden;
   z-index: -1;
     @include mq(small) {
-      margin-bottom: 0;
+      margin-bottom: 7em;
   }
 }
+
+// .podcast__text {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   p {
+//       text-align: left;
+//   }
+// }
+
 
 .intro__photo,
 .client__photo {
@@ -191,6 +199,19 @@ overflow: hidden;
   }
 }
 
+.podcast__photo {
+  width: 100%;
+  overflow: hidden;
+  img {
+    width: 80%;
+    animation: fadein 4s;
+    @include aspect-ratio(1, 1);
+     @include mq(mid) {
+       width: 100%;
+     }
+ }
+}
+
 #footer {
 font-family: $sans;
 background-color: var(--clr-green-500);
@@ -207,6 +228,9 @@ margin-top:auto;
   @include flexCenter(row);
   p, a {
     font-size: 14px;
+    @include mq(small) {
+      line-height: 2;
+    }
   }
 }
   .contact,
@@ -455,9 +479,9 @@ div.blog,
 }
 
 
-#blog-post .hero-image {
+#blog-post .hero-image,
+#client-post .hero-image  {
   margin-top: 35px;
-  background-image: url("../img/katherine.png");
   min-height: 30vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -466,9 +490,26 @@ div.blog,
   position: sticky;
   top:0;
   z-index: 2;
+  width: 100vw;
+  height: 100vh;
 }
 
-#blog-post .blog-post__header {
+
+#blog-post .hero-image {
+  background-image: url("../img/katherine.png");
+}
+#client-post .hero-image {
+  background-image: url("../img/Foto_Hadisa2.png");
+}
+
+#client-post .aside__background {
+  background-color: var(--clr-green-100);
+  padding: 1.5em;
+  border-radius: 10%;
+}
+
+#blog-post .blog-post__header,
+#client-post .client-post__header {
   padding: 75px;
   margin-top: 75px;
   display: grid;
@@ -476,6 +517,7 @@ div.blog,
   margin-right: auto;
   margin-left:auto;
   .post__nav{
+    position:fixed;
       grid-column: 1 / 2;
       a     {
         position: relative;
@@ -521,28 +563,29 @@ div.blog,
   }
     .post__aside {
       grid-column: 3 / 4;
-      height: 150px;
-      width: 200px;
-      background: var(--clr-umber-200);
-      border-radius: 10px;
+      max-width: 234px;
       padding: 25px;
-      h5 {
-        font-family: $sans;
-        margin-bottom: 15px;
-      }
-      ul {
-        @include flexCenter(column);
-        align-items: flex-start;
-        color: var(--clr-green-400);
-        li {
-          line-height: 1.5;
+      .aside__background {
+        h5 {
+          font-family: $sans;
+          margin-bottom: 15px;
+        }
+        ol {
+          @include flexCenter(column);
+          align-items: flex-start;
+          color: var(--clr-green-300);
+          font-family: $sans;
+          li {
+            line-height: 1.5;
+          }
         }
       }
+
 
     }
   }
 
-  .post__subheading {
+.post__subheading {
     font-family: $sans;
     @include font-size($h3-font-sizes);
     margin: 20px 0 10px 0;

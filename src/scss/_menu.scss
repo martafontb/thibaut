@@ -22,7 +22,7 @@ header {
 
 #index {
         header {
-            margin-top: 7em;
+            margin-top: 8em;
         }
     }
 
@@ -69,14 +69,15 @@ nav {
         a {
         color:var(--clr-green-500);
         @include hover-line();  
+        }
 
-            i {
-                transition: $default-transition;
-                &:hover {
-                    transform: scale(1.25);
-                }
+        i {
+            transition: $default-transition;
+            &:hover {
+                transform: scale(1.25);
             }
         }
+
 
         @include mq(small) {
         #menu-overlay {
@@ -84,7 +85,7 @@ nav {
         position:fixed;
         top:-56px;
         z-index:20;
-        height:100vh;
+        height:120vh;
         width: 100vw;
         background-color: var(--clr-green-500);
         overflow: hidden;

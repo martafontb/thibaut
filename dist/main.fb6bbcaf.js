@@ -324,7 +324,7 @@ document.querySelector(".expander").addEventListener("click", animateIt);
 var tl = gsap.timeline();
 tl.from(".about__open", {
   height: 0,
-  duration: 2,
+  duration: 3,
   ease: "power3.inOut"
 });
 tl.reversed(true);
@@ -367,7 +367,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61814" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52322" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

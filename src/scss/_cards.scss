@@ -76,15 +76,14 @@
   }
   
   .post__hero {
-    padding-bottom: 163px;
+    padding-bottom: 45px;
     margin-left: auto;
     margin-right:auto;
-    max-width: 1000px;
+    max-width: 1100px;
     .card {
       @include mq(mid) {
         @include flexCenter(column-reverse);
-        gap: 35px;
-
+        gap: 45px;
       }
     }
   }
@@ -104,6 +103,9 @@
     @include mq(small) {
       grid-template-columns: 1fr;
       grid-gap: 35px;
+      .card {
+        overflow: visible;
+      }
     }
   }
 
@@ -147,11 +149,32 @@ section.podcast {
     @include flexCenter(column);
     gap: 200px 95px;
     margin-bottom: 10em;
+    @include mq (small) {
+      // overflow: hidden;
+      padding:0;
+      gap: 40px 35px;
+    }
   }
   .client__card {
     @include flexCenter(row);
     gap:95px;
     padding: 40px;
+    
+    @include mq (small) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px;
+        gap: 40px;
+        align-content: center;
+        overflow: hidden;
+    }
+    .client__image img {
+      @include mq (small) {
+        width:100%;
+      }
+    }
   }
 
   .card__words {

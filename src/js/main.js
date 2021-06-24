@@ -190,7 +190,7 @@ document.querySelector(".expander").addEventListener("click", animateIt);
 const tl = gsap.timeline();
 tl.from(".about__open",{
   height: 0,
-  duration: 2,
+  duration: 3,
   ease:"power3.inOut"
 });
 tl.reversed(true);
@@ -204,3 +204,5 @@ function animateIt() {
       infoToggle.innerHTML = "Toon minder"
     }
 }
+
+

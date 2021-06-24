@@ -108,8 +108,11 @@
             </nav>
     </header>
     <main id="blog-post">
-      <div class="hero-image">
-      </div>
+
+        <div class="hero-image">
+        </div>
+
+
 
       <div class="blog-post__header">
 
@@ -138,19 +141,21 @@
               <p>Hoe ik me IRL (in real life) heb aangepast? De eerste stap was de vraag stellen: wat heeft het Gezelschap op dit moment nodig? En dan luisteren. Luisteren is een tricky ding. Ik kan eerlijk zeggen dat ik niet geboren ben als een talentvol luisteraar. Het is gelukkig een skill zoals een ander. Deze heb ik dan ook de laatste jaren actief getraind. Mijn beste leerschool hiervoor waren video's van The Futur.</p>
               <p>Door Storm Corona vielen bepaalde zaken weg bij het maken van video's: niet meer op scholen gaan filmen met Hadisa, geen seminaries meer filmen voor Baker Tilly. Maar ik luisterde naar hun noden. En in het proces van hen te helpen met hun noden, leerde ik nieuwe skills.</p>
               <p>Ik leerde hoe live webinars op te zetten voor klanten. Ik begeleidde klanten bij het aankoopproces voor een in-house livestreaming studio. Ik digitaliseerde een opleiding tussen retailer en dealer, die normaal gezien fysiek over meerdere dagen werd gegeven. Ik maakte een 2020 live event voor 100 man, dat een nieuwjaarsfeest en eindejaarsvergadering volledig digitaliseerde. Er kwamen veel positieve reacties hier op. En zo gaat het lijstje door.</p>
-              <img src="" alt="">
+              <img data-aos="fade-in" src="" alt="">
               <p>De digitale sector was natuurlijk niet de meest getroffen sector in corona. Maar toch moest iedereen zich aanpassen. Er waren genoeg collega's van mij die voorheen hun talenten kwijt konden in festivals filmen, bedrijfsevents filmen, travel video's maken. Voor hen was het evenveel aanpassen.</p>
             </div>
       </div>
     </section>
       <div class="post__aside">
-        <h5 class="text-umber-300">INHOUD</h5>
-        <ul>
-          <li> 1) Storm Corona</li>
-          <li> 2) Nieuwe skills</li>
-          <li> 3) Goed Gezelschap is de helft van het avontuur</li>
-          <li> 4) Compound Effects</li>
-        </ul>
+        <div class="aside__background">
+          <h5 class="text-umber-300">INHOUD</h5>
+          <ol>
+            <li> 1. Storm Corona</li>
+            <li> 2. Nieuwe skills</li>
+            <li> 3. Goed Gezelschap is de helft van het avontuur</li>
+            <li> 4. Compound Effects</li>
+          </ol>
+        </div>
       </div>
     </div>
 
@@ -173,24 +178,39 @@
         <div class="back-to-top">
           <a data-scroll="" href="#">Terug naar boven</a>
         </div>
+
         <div class="copyright">
           <p class="text-green-200"> 
-            </p><p class="text-rose-100">© Thibaut Verrue, 2021</p> 
+            <span class="text-rose-100">© Thibaut Verrue, 2021</span> 
             - <a href="#">Privacy policy</a>
             - Web design: 
             <a href="">Nele Kempenaers</a> 
             - Web development: 
             <a href="">Marta Font</a>
-          <p></p> 
+          </p> 
           </div>
-      </div> 
-    
+    </div>
   </footer> 
 
     <script src="/lazysizes.min.481d24e5.js" async=""></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js" integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+
+    <script>// center image 
+gsap.to(".hero-image", {
+  scrollTrigger: {
+    trigger: ".hero-image",
+    start: "top top",
+    toggleActions: "restart none none reverse"
+  },
+  y: -400,
+  delay: 0.2,
+  duration: 1
+});</script>
     <script src="/main.fb6bbcaf.js"></script>
   </body>
 </html>
+
