@@ -64,17 +64,6 @@
     }
   }
   
-  
-  .card__image {
-    max-width: 500px;
-    @include mq(small) {
-      width: 275px;
-      overflow:hidden;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-  
   .post__hero {
     padding-bottom: 45px;
     margin-left: auto;
@@ -177,6 +166,15 @@ section.podcast {
     }
   }
 
+  .card__image {
+    max-width: 500px;
+    @include mq(small) {
+      width: 275px !important;
+      overflow:hidden;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
   .card__words {
     display: flex;
     flex-direction: column;

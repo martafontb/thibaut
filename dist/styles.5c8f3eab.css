@@ -143,6 +143,10 @@ div#fp-nav a span {
   transform: rotate(45deg);
   background-color: var(--clr-umber-300) !important; }
 
+@media only screen and (max-width: 40em) {
+  #fp-nav.fp-right {
+    right: -30px; } }
+
 @keyframes slide-up {
   from {
     transform: translateY(200%);
@@ -152,7 +156,7 @@ div#fp-nav a span {
     opacity: 1; } }
 
 [data-anchor="firstPage"] span.word {
-  animation: slide-up 1s forwards;
+  animation: slide-up 1.5s forwards;
   animation-delay: calc(.2s + (.1s * var(--line-index)));
   opacity: 0; }
 
@@ -421,15 +425,6 @@ a.card__cta {
     border-bottom: 0;
     position: absolute; }
 
-.card__image {
-  max-width: 500px; }
-  @media only screen and (max-width: 40em) {
-    .card__image {
-      width: 275px;
-      overflow: hidden;
-      object-fit: cover;
-      object-position: center; } }
-
 .post__hero {
   padding-bottom: 45px;
   margin-left: auto;
@@ -530,6 +525,15 @@ section .card__pod {
   @media only screen and (max-width: 40em) {
     .client__card .client__image img {
       width: 100%; } }
+
+.card__image {
+  max-width: 500px; }
+  @media only screen and (max-width: 40em) {
+    .card__image {
+      width: 275px !important;
+      overflow: hidden;
+      object-fit: cover;
+      object-position: center; } }
 
 .card__words {
   display: flex;
@@ -941,7 +945,16 @@ section {
     .intro,
     .podcast-main,
     .clients {
-      margin-bottom: 7em; } }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start; } }
+
+@media only screen and (max-width: 40em) {
+  .podcast-main {
+    flex-direction: column-reverse;
+    justify-content: flex-end; } }
 
 .intro__photo,
 .client__photo {
@@ -952,7 +965,7 @@ section {
   place-items: center; }
   .intro__photo img,
   .client__photo img {
-    width: 80%;
+    width: 100%;
     animation: fadein 4s;
     position: relative; }
     .intro__photo img:before,
@@ -995,6 +1008,14 @@ section {
       .podcast__photo img {
         width: 100%; } }
 
+@media only screen and (max-width: 40em) {
+  .intro__photo,
+  .podcast__photo,
+  .client__photo {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 30px; } }
+
 #footer {
   font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
   background-color: var(--clr-green-500);
@@ -1002,6 +1023,9 @@ section {
   margin-top: auto; }
   #footer .footer_wrapper {
     padding: 80px; }
+    @media only screen and (max-width: 40em) {
+      #footer .footer_wrapper {
+        padding: 40px; } }
   #footer .fp-tableCell {
     vertical-align: top; }
   #footer .copyright {

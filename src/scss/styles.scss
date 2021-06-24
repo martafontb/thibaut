@@ -155,7 +155,6 @@ overflow: hidden;
     .intro, .intro__text, .client__photo {
       margin-top:0em;
     }
-
     grid-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
@@ -167,20 +166,16 @@ overflow: hidden;
   overflow: hidden;
   z-index: -1;
     @include mq(small) {
-      margin-bottom: 7em;
+      @include flexCenter(column);  
+      justify-content: flex-start;
   }
 }
-
-// .podcast__text {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: flex-end;
-//   p {
-//       text-align: left;
-//   }
-// }
-
+.podcast-main {
+  @include mq(small) {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+}
 
 .intro__photo,
 .client__photo {
@@ -190,7 +185,7 @@ overflow: hidden;
   display: grid;
   place-items: center;
    img {
-     width: 80%;
+     width: 100%;
      animation: fadein 4s;
      @include aspect-ratio(1, 1);
       @include mq(mid) {
@@ -212,6 +207,18 @@ overflow: hidden;
  }
 }
 
+.intro__photo,
+.podcast__photo,
+.client__photo {
+  @include mq(small) {
+    display: flex;
+    align-items: flex-start;
+    padding-top:30px;
+  }
+}
+
+
+
 #footer {
 font-family: $sans;
 background-color: var(--clr-green-500);
@@ -219,6 +226,9 @@ color: var(--clr-rose-100);
 margin-top:auto;
 .footer_wrapper {
   padding: 80px;
+  @include mq(small){
+    padding: 40px;
+  }
 }
 .fp-tableCell{
   vertical-align: top;

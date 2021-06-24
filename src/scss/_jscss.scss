@@ -42,6 +42,12 @@ div#fp-nav a span {
   background-color: var(--clr-umber-300)!important;
 }
 
+#fp-nav.fp-right {
+ @include mq(small){
+   right: -30px;
+ }
+}
+
 
 @keyframes slide-up {
   from {
@@ -55,7 +61,7 @@ div#fp-nav a span {
 }
 
 [data-anchor="firstPage"] span.word {
-      animation: slide-up 1s forwards;
+      animation: slide-up 1.5s forwards;
       animation-delay: calc(.2s + (.1s * var(--line-index)));
       opacity:0;
       @keyframes slide-up {
