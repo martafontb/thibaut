@@ -279,12 +279,17 @@ new fullpage('#fullpage', (_fullpage = {
 function menuToggle() {
   var menu = document.getElementById('menu-overlay');
   var fpNav = document.getElementById('fp-nav');
-  var nav = document.querySelector('nav');
+  var nav = document.querySelector('nav'); // const main = document.querySelector('main');
+  // const footer = document.querySelector('footer');
+
   menu.classList.toggle('active');
   nav.classList.toggle('dark');
 
   if (menu.classList.contains("active")) {
-    fpNav.style.opacity = 0;
+    document.querySelector('main').style.display = "none";
+    document.querySelector('main').style.overflow = "hidden";
+    document.querySelector('footer').style.display = "none";
+    document.querySelector('footer').style.overflow = "hidden";
     gsap.to(".burger-top", {
       rotation: 45,
       transformOrigin: "50% 50%",
@@ -298,8 +303,20 @@ function menuToggle() {
     gsap.to(".burger-mid", {
       width: 0
     });
+
+    if (fpNav != null) {
+      fpNav.style.opacity = 0;
+    }
   } else {
-    fpNav.style.opacity = 1;
+    document.querySelector('main').style.display = "block";
+    document.querySelector('main').style.overflow = "visible";
+    document.querySelector('footer').style.display = "block";
+    document.querySelector('footer').style.overflow = "visible";
+
+    if (fpNav != null) {
+      fpNav.style.opacity = 1;
+    }
+
     gsap.to(".burger-top", {
       rotation: 0,
       y: 0
@@ -320,6 +337,7 @@ document.getElementById('toggleIcon').addEventListener('touchstart', function ()
 //Profile-info toggle
 
 var infoToggle = document.querySelector('.info-toggle');
+var body = document.querySelector('body');
 document.querySelector(".expander").addEventListener("click", animateIt);
 var tl = gsap.timeline();
 tl.from(".about__open", {
@@ -334,9 +352,9 @@ function animateIt() {
   body.classList.toggle('profile-open');
 
   if (body.classList.contains('profile-open')) {
-    infoToggle.innerHTML = "Toon meer";
-  } else {
     infoToggle.innerHTML = "Toon minder";
+  } else {
+    infoToggle.innerHTML = "Toon meer";
   }
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -367,7 +385,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51348" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57719" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

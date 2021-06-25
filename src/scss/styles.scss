@@ -48,6 +48,9 @@
   transition: $default-transition;
     &.cookies {
       transform: translate3d(0px, 25px, 0px);
+      @include mq(small) {
+        transform: translate3d(0px, 55px, 0px);
+      }
   }
 }
 
@@ -335,7 +338,7 @@ div.blog,
   top:0;
   left:0;
   right:0;
-  padding: 1.2rem;
+  padding: 1.5rem;
   opacity:1;
   transition: opacity 2s ease;
   background-color:var(--clr-umber-300);
@@ -354,7 +357,8 @@ div.blog,
       position: relative;
       right: 0px;
       top: 4px;
-      width: 32px;
+      padding: 8px;
+      width: 22px;
       height: 32px;
       opacity: 0.8;
       border-bottom: none;
@@ -367,7 +371,7 @@ div.blog,
       left: 15px;
       content: ' ';
       height: 16px;
-      width: 1px;
+      width: 1.5px;
       background-color:var(--clr-rose-100);
     }
     .close:before {
@@ -386,7 +390,8 @@ div.blog,
         font-size: 15px;
       }
       .close {
-        right: 6px;
+      padding: 8px;
+      position: absolute;
       }
     }
 }
@@ -488,6 +493,28 @@ div.blog,
   margin-bottom: 5em;
 }
 
+
+#blog-post section.hero__fw {
+  overflow: hidden;
+  padding:0;
+  }
+  
+  #blog-post .hero {
+    background-image: url("../img/katherine.png");
+  }
+  .hero {
+  display: flex;
+  align-items: center;
+  justify-content:  center;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include mq (small){
+      height: 50vh;
+  }
+  }
 
 #blog-post .hero-image,
 #client-post .hero-image  {

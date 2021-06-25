@@ -156,19 +156,37 @@ function menuToggle(){
   const menu = document.getElementById('menu-overlay');
   const fpNav = document.getElementById('fp-nav');
   const nav = document.querySelector('nav');
+  // const main = document.querySelector('main');
+  // const footer = document.querySelector('footer');
 
   menu.classList.toggle('active')
   nav.classList.toggle('dark')
 
  
   if (menu.classList.contains("active")) {   
-    fpNav.style.opacity = 0;
-
+    
+    document.querySelector('main').style.display = "none"; 
+    document.querySelector('main').style.overflow = "hidden";
+    document.querySelector('footer').style.display = "none"; 
+    document.querySelector('footer').style.overflow = "hidden";
+ 
     gsap.to(".burger-top", { rotation: 45, transformOrigin: "50% 50%", y: 8 })
     gsap.to(".burger-bottom", { rotation: -45, transformOrigin: "50% 50%", y: -8 })
     gsap.to(".burger-mid", { width: 0 })
+
+    if(fpNav != null){
+      fpNav.style.opacity = 0;
+    }
   } else {
-    fpNav.style.opacity = 1;
+
+    document.querySelector('main').style.display = "block"; 
+    document.querySelector('main').style.overflow = "visible";
+    document.querySelector('footer').style.display = "block"; 
+    document.querySelector('footer').style.overflow = "visible";
+
+    if(fpNav != null){
+      fpNav.style.opacity = 1;
+    }
 
 
     gsap.to(".burger-top", { rotation: 0, y: 0 })
@@ -185,6 +203,7 @@ document.getElementById('toggleIcon').addEventListener('touchstart', function() 
 
 //Profile-info toggle
 const infoToggle = document.querySelector('.info-toggle')
+const body = document.querySelector('body')
 document.querySelector(".expander").addEventListener("click", animateIt);
 
 const tl = gsap.timeline();
@@ -199,9 +218,10 @@ function animateIt() {
   tl.reversed(!tl.reversed())
     body.classList.toggle('profile-open')
     if(body.classList.contains('profile-open')){
-      infoToggle.innerHTML = "Toon meer"
-    } else {
       infoToggle.innerHTML = "Toon minder"
+    } else {
+      infoToggle.innerHTML = "Toon meer"
+  
     }
 }
 

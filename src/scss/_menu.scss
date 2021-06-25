@@ -5,6 +5,7 @@ header {
     margin-top: 6em;
     margin-left: 5em;
     margin-right: 5em;
+    margin-bottom: 2em;
     svg {
         margin-right: auto;
     }
@@ -20,11 +21,12 @@ header {
     }
 }
 
-#index {
-        header {
-            margin-top: 8em;
-        }
-    }
+#index header{
+    margin-top: 8em;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 0em;
+}
 
 #logo1 {
     display:block;
@@ -85,7 +87,7 @@ nav {
         position:fixed;
         top:-56px;
         z-index:20;
-        height:120vh;
+        height:100vh;
         width: 100vw;
         background-color: var(--clr-green-500);
         overflow: hidden;
