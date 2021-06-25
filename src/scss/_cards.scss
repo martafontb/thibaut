@@ -99,10 +99,10 @@
   }
 
 section.podcast {
-  max-width:754;
+  max-width:800;
   margin-left:auto;
   margin-right: auto;
-  gap: 50px;
+  gap: 60px;
   @include mq(small) {
     .card {
       max-width: 250px;
@@ -138,6 +138,7 @@ section.podcast {
     @include flexCenter(column);
     gap: 200px 95px;
     margin-bottom: 10em;
+   
     @include mq (small) {
       // overflow: hidden;
       padding:0;
@@ -148,6 +149,7 @@ section.podcast {
     @include flexCenter(row);
     gap:95px;
     padding: 40px;
+    max-width:1100px;
     
     @include mq (small) {
         display: flex;

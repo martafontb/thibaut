@@ -202,7 +202,7 @@ document.getElementById('toggleIcon').addEventListener('touchstart', function() 
 //info toggle
 
 //Profile-info toggle
-const infoToggle = document.querySelector('.info-toggle')
+const infoToggle = document.querySelector('.expander')
 const body = document.querySelector('body')
 document.querySelector(".expander").addEventListener("click", animateIt);
 
@@ -219,10 +219,10 @@ function animateIt() {
     body.classList.toggle('profile-open')
     if(body.classList.contains('profile-open')){
       infoToggle.innerHTML = "Toon minder"
+      infoToggle.classList.add('info-toggle')
     } else {
       infoToggle.innerHTML = "Toon meer"
-  
+      infoToggle.classList.remove('info-toggle')
     }
 }
-
 

@@ -8,6 +8,7 @@
 @import 'root';
 @import 'cards';
 @import 'menu';
+@import 'post';
 
 
 .cursors div {
@@ -463,7 +464,7 @@ div.blog,
       @include font-size($p-header-font-sizes);
     }
 
-    a.info-toggle {
+    a.expander {
       position: relative;
       margin-right:auto;
       @include hover-line-revers;
@@ -472,16 +473,27 @@ div.blog,
             bottom: -1px;
           }
           &::after {
-          content:url(../img/vector-white.svg);
+          content:url(../img/down-arrow.svg);
           margin-left:10px;
           top:10px;
           border-bottom:0;
           position: absolute;
-      
           }
     }
+
+    a.info-toggle {
+      &::after {
+        content:url(../img/up-arrow.svg);
+        margin-left:10px;
+        top:10px;
+        border-bottom:0;
+        position: absolute;
+        }
+    }
+
     .about__open {
       overflow: hidden;
+      margin-bottom: 20px;
       @include mq(small) {
       height: 460px;
       }
@@ -494,144 +506,3 @@ div.blog,
 }
 
 
-#blog-post section.hero__fw {
-  overflow: hidden;
-  padding:0;
-  }
-  
-  #blog-post .hero {
-    background-image: url("../img/katherine.png");
-  }
-  .hero {
-  display: flex;
-  align-items: center;
-  justify-content:  center;
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  @include mq (small){
-      height: 50vh;
-  }
-  }
-
-#blog-post .hero-image,
-#client-post .hero-image  {
-  margin-top: 35px;
-  min-height: 30vh;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: sticky;
-  top:0;
-  z-index: 2;
-  width: 100vw;
-  height: 100vh;
-}
-
-
-#blog-post .hero-image {
-  background-image: url("../img/katherine.png");
-}
-#client-post .hero-image {
-  background-image: url("../img/Foto_Hadisa2.png");
-}
-
-#client-post .aside__background {
-  background-color: var(--clr-green-100);
-  padding: 1.5em;
-  border-radius: 10%;
-}
-
-#blog-post .blog-post__header,
-#client-post .client-post__header {
-  padding: 75px;
-  margin-top: 75px;
-  display: grid;
-  grid-template: auto 1fr auto;
-  margin-right: auto;
-  margin-left:auto;
-  .post__nav{
-    position:fixed;
-      grid-column: 1 / 2;
-      a     {
-        position: relative;
-        margin-right:auto;
-        @include hover-line-revers;
-            &::after {
-            content:url(../img/Vector.svg);
-            margin-left:10px;
-            top:10px;
-            border-bottom:0;
-            position: absolute;
-            }
-      } 
-    }
-  
-    .post__header {
-      grid-column: 2 / 3;
-      font-family: $sans;
-      .post__tags{
-        .tag {
-          background: #F2E2D7;
-          border-radius: 2px;
-          padding: 2px 5px;
-          font-family: $sans;
-          color: var(--clr-umber-300);
-        }
-      }
-      h2 {
-        @include font-size($h1-font-sizes);
-        margin-top: 30px;
-      }
-      .post__date {
-        margin-bottom: 30px;
-        color: var(--clr-green-300);
-        font-family: $sans;
-      }
-    }
-    section {
-      padding: 0 48px;
-      p {
-        margin-bottom: 25px;
-      }
-  }
-    .post__aside {
-      grid-column: 3 / 4;
-      max-width: 234px;
-      padding: 25px;
-      .aside__background {
-        h5 {
-          font-family: $sans;
-          margin-bottom: 15px;
-        }
-        ol {
-          @include flexCenter(column);
-          align-items: flex-start;
-          color: var(--clr-green-300);
-          font-family: $sans;
-          li {
-            line-height: 1.5;
-          }
-        }
-      }
-
-
-    }
-  }
-
-.post__subheading {
-    font-family: $sans;
-    @include font-size($h3-font-sizes);
-    margin: 20px 0 10px 0;
-  }
-
-.post__body {
-  display: grid;
-  grid-gap: 48px;
-  grid-template: auto 1fr auto;
-  @include font-size($p-header-font-sizes);
-  max-width: 706px;
-}
