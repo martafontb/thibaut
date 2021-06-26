@@ -32,7 +32,16 @@
   @include mq(mid) {
     display:none;
   }
+}
 
+.cursors div.footer {
+  &:first-child::before {
+    content:url(../img/cursor-white.svg);
+    margin-left:10px;
+    top:10px;
+    border-bottom:0;
+    position: absolute;
+  }
 }
 
 .fade-out {
@@ -91,7 +100,7 @@ p {
       @include font-size($p-font-sizes);
       color:var(--clr-green-500);
       &::after {
-      content:url(../img/Vector.svg);
+      content:url(../img/green-arrow.svg);
       margin-left:10px;
       top:10px;
       border-bottom:0;
@@ -243,8 +252,11 @@ margin-top:auto;
   p, a {
     font-size: 14px;
     @include mq(small) {
-      line-height: 2;
+      line-height: 1.8;
     }
+  }
+  a:hover {
+    color:var(--clr-rose-100);
   }
 }
   .contact,
@@ -259,14 +271,6 @@ margin-top:auto;
   a {
     color: var(--clr-rose-100);
     transition: $default-transition;
-    &::after {
-      width: 100%;
-      height: 1px;
-      bottom: -3px;
-      left: 0;
-      background-color:var(--clr-green-200);
-      transform-origin: bottom left;
-    }
   }
   .socials a {
     padding:15px;  
@@ -285,12 +289,11 @@ margin-top:auto;
   .back-to-top a,
   .email a {
     @include hover-line-revers;
-
   }
-  .back-to-top a {
+  .back-to-top a{
     position:relative;
-    &::after {
-    // content:url(../img/vector-3.svg);
+    &::after  {
+    content:url(../img/vector-3.svg);
     top:-15px;
     right: 65px;
     border-bottom:0;
@@ -474,6 +477,7 @@ div.blog,
           }
           &::after {
           content:url(../img/down-arrow.svg);
+          transition: $default-transition;
           margin-left:10px;
           top:10px;
           border-bottom:0;
@@ -483,7 +487,8 @@ div.blog,
 
     a.info-toggle {
       &::after {
-        content:url(../img/up-arrow.svg);
+        content:url(../img/down-arrow.svg);
+        transform: rotate(180deg);
         margin-left:10px;
         top:10px;
         border-bottom:0;

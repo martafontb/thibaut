@@ -204,9 +204,10 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 }); //cursor 
 
 var cursorTag = document.querySelector("div.cursors");
+var arrow = document.querySelector("div.arrow");
 var balls = cursorTag.querySelectorAll("div");
 var cta = document.querySelectorAll("a");
-var footer = document.getElementById("footer[data-hover]");
+var footer = document.querySelector("footer");
 var aimX = 0;
 var aimY = 0;
 balls.forEach(function (ball, index) {
@@ -239,10 +240,13 @@ cta.forEach(function (cta) {
       return cursor.style.backgroundColor = "rgba(202,207,199, 0.1)";
     });
   });
-}); // footer.addEventListener("mouseover", function(){
-//   cursor.classList.add("dark");
-// })
-//splitting
+});
+footer.addEventListener("mouseover", function () {
+  arrow.classList.add("footer");
+});
+footer.addEventListener("mouseout", function () {
+  arrow.classList.remove("footer");
+}); //splitting
 
 Splitting(); //aos
 
@@ -387,7 +391,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52397" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62052" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

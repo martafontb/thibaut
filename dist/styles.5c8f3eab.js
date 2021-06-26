@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./fonts/PlantinMTProLight.woff":[["PlantinMTProLight.4b11cf53.woff","scss/fonts/PlantinMTProLight.woff"],"scss/fonts/PlantinMTProLight.woff"],"./fonts/PlantinMTProLightIt.woff":[["PlantinMTProLightIt.2b58eaaf.woff","scss/fonts/PlantinMTProLightIt.woff"],"scss/fonts/PlantinMTProLightIt.woff"],"./fonts/BentonSans-Regular.woff":[["BentonSans-Regular.3c6e6e42.woff","scss/fonts/BentonSans-Regular.woff"],"scss/fonts/BentonSans-Regular.woff"],"./../img/Vector.svg":[["Vector.794dec81.svg","img/Vector.svg"],"img/Vector.svg"],"./../img/katherine.png":[["katherine.0c4e5a8a.png","img/katherine.png"],"img/katherine.png"],"./../img/Foto_Hadisa2.png":[["Foto_Hadisa2.1b6900f3.png","img/Foto_Hadisa2.png"],"img/Foto_Hadisa2.png"],"./../img/vector-4.svg":[["vector-4.4d13d4db.svg","img/vector-4.svg"],"img/vector-4.svg"],"./../img/down-arrow.svg":[["down-arrow.13e7b4ae.svg","img/down-arrow.svg"],"img/down-arrow.svg"],"./../img/up-arrow.svg":[["up-arrow.5173c3e7.svg","img/up-arrow.svg"],"img/up-arrow.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./fonts/PlantinMTProLight.woff":[["PlantinMTProLight.4b11cf53.woff","scss/fonts/PlantinMTProLight.woff"],"scss/fonts/PlantinMTProLight.woff"],"./fonts/PlantinMTProLightIt.woff":[["PlantinMTProLightIt.2b58eaaf.woff","scss/fonts/PlantinMTProLightIt.woff"],"scss/fonts/PlantinMTProLightIt.woff"],"./fonts/BentonSans-Regular.woff":[["BentonSans-Regular.3c6e6e42.woff","scss/fonts/BentonSans-Regular.woff"],"scss/fonts/BentonSans-Regular.woff"],"./../img/Vector.svg":[["Vector.794dec81.svg","img/Vector.svg"],"img/Vector.svg"],"./../img/green-arrow.svg":[["green-arrow.2cb17e12.svg","img/green-arrow.svg"],"img/green-arrow.svg"],"./../img/katherine.png":[["katherine.0c4e5a8a.png","img/katherine.png"],"img/katherine.png"],"./../img/Foto_Hadisa2.png":[["Foto_Hadisa2.1b6900f3.png","img/Foto_Hadisa2.png"],"img/Foto_Hadisa2.png"],"./../img/vector-4.svg":[["vector-4.4d13d4db.svg","img/vector-4.svg"],"img/vector-4.svg"],"./../img/cursor-white.svg":[["cursor-white.1e25e4a6.svg","img/cursor-white.svg"],"img/cursor-white.svg"],"./../img/vector-3.svg":[["vector-3.163c6cea.svg","img/vector-3.svg"],"img/vector-3.svg"],"./../img/down-arrow.svg":[["down-arrow.13e7b4ae.svg","img/down-arrow.svg"],"img/down-arrow.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52397" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62052" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

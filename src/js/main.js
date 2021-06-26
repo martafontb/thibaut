@@ -56,10 +56,10 @@ const lazy = () => {
 
 //cursor 
 const cursorTag = document.querySelector("div.cursors") 
-
+const arrow = document.querySelector("div.arrow") 
 const balls = cursorTag.querySelectorAll("div")
 const cta = document.querySelectorAll("a")
-const footer = document.getElementById("footer[data-hover]")
+const footer = document.querySelector("footer")
 
 let aimX = 0
 let aimY = 0
@@ -98,9 +98,13 @@ cta.forEach(cta => {
   })
 })
 
-// footer.addEventListener("mouseover", function(){
-//   cursor.classList.add("dark");
-// })
+
+footer.addEventListener("mouseover", function(){
+  arrow.classList.add("footer");
+})
+footer.addEventListener("mouseout", function(){
+  arrow.classList.remove("footer");
+})
 
 //splitting
 Splitting();
