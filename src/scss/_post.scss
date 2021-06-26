@@ -43,6 +43,10 @@
             max-width: 506px;
         }
     }
+    @include mq(small){
+      grid-template-columns: 1fr;
+      padding: 25px;
+    }
   }
 
   .post__sidenav {
