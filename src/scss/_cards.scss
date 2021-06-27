@@ -17,7 +17,6 @@
     }
   }
 
-
   section .card  {
   @include flexCenter(row);
   column-gap: 25px;
@@ -76,7 +75,7 @@
       }
     }
   }
-  
+
   section.post {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -98,88 +97,20 @@
     }
   }
 
-section.podcast {
-  max-width:800;
-  margin-left:auto;
-  margin-right: auto;
-  gap: 60px;
-  @include mq(small) {
-    .card {
-      max-width: 250px;
-     }
-  }
-}
- section .card__pod {
-    display: flex;
-    flex-direction: column;
-    h3 {
-      @include font-size($p-header-font-sizes);
-    }
-    .card__image {
-      width: 290px;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-    }
-    .card__text {
-      min-height: 181px;
-      display: flex;
-      flex-direction: column;
-      align-content:flex-start;
-      justify-content: space-between;
-    }
-
-    .card__cta{
-      margin-top: 25px;
-    }
-  }
-
-  .client_section {
-    @include flexCenter(column);
-    gap: 200px 95px;
-    margin-bottom: 10em;
-   
-    @include mq (small) {
-      // overflow: hidden;
-      padding:0;
-      gap: 40px 35px;
-    }
-  }
-  .client__card {
-    @include flexCenter(row);
-    gap:95px;
-    padding: 40px;
-    max-width:1100px;
-    
-    @include mq (small) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 40px;
-        gap: 40px;
-        align-content: center;
-        overflow: hidden;
-    }
-    .client__image img {
-      @include mq (small) {
-        width:100%;
-      }
-    }
-  }
-
   .card__image {
     max-width: 500px;
     @include mq(small) {
-      width: 275px !important;
+      height: 50vw;
       overflow:hidden;
       object-fit: cover;
       object-position: center;
       img {
         width:100%;
+        object-fit: contain;
       }
     }
   }
+
   .card__words {
     display: flex;
     flex-direction: column;
@@ -205,4 +136,80 @@ section.podcast {
         border-bottom:0;
         position: absolute;
     }
+  }
+
+  section.podcast {
+    max-width:800;
+    margin-left:auto;
+    margin-right: auto;
+    gap: 60px;
+    @include mq(small) {
+      .card {
+        max-width: 250px;
+      }
+    }
+  }
+
+  section .card__pod {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        @include font-size($p-header-font-sizes);
+      }
+      .card__image {
+        width: 290px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        @include mq(small){
+          height: 70vw;
+        }
+      }
+      .card__text {
+        min-height: 181px;
+        display: flex;
+        flex-direction: column;
+        align-content:flex-start;
+        justify-content: space-between;
+      }
+      .card__cta{
+        margin-top: 25px;
+      }
+    }
+
+  .client_section {
+    @include flexCenter(column);
+    gap: 200px 95px;
+    margin-bottom: 10em;
+   
+    @include mq (small) {
+      padding:0;
+      gap: 40px 35px;
+    }
+  }
+  
+  .client__card {
+    @include flexCenter(row);
+    gap:95px;
+    padding: 40px;
+    max-width:1100px;
+    @include mq (small) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px;
+        gap: 40px;
+        align-content: center;
+        overflow: hidden;
+    }
+    .client__image img {
+      @include mq (small) {
+        width:100%;
+      }
+    }
+  }
+
+  .client__card:nth-child(odd){
+    flex-direction: row-reverse;
   }

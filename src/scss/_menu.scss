@@ -31,8 +31,8 @@ svg#logo2 {
 }
     
 @media all and (max-width: 786px) {
-    #logo1 {display: none;}
-    #logo2 {display: block;}
+    svg#logo1 {display: none;}
+    svg#logo2 {display: block;}
     }
 
     .nav-btn {
@@ -108,6 +108,7 @@ nav {
             #menu-overlay.active {
                 transform: scale(1);
                 opacity: 1;
+                left:0;
                 ul {
                     opacity: 1;
                 }
