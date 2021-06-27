@@ -1,58 +1,61 @@
-    #blog-post section.hero__fw,
-    #client-post section.hero__fw {
-    overflow: hidden;
-    padding:0;
-    }
+#blog-post section.hero__fw,
+#client-post section.hero__fw {
+overflow: hidden;
+padding:0;
+}
 
-    .hero {
-        display: flex;
-        align-items: center;
-        justify-content:  center;
-        width: 100vw;
-        height: 90vh;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        @include mq (mid){
-            height: 70vh;
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    width: 100vw;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include mq (mid){
+        height: 70vh;
+    }
+        @include mq (small){
+            height: 50vh;
         }
-            @include mq (small){
-                height: 50vh;
-            }
-        }
+    }
     
-    #blog-post .hero {
-      background-image: url("../img/katherine.png");
-    }
+#blog-post .hero {
+  background-image: url("../img/katherine.png");
+}
 
-    #client-post .hero {
-        background-image: url("../img/Foto_Hadisa2.png");
-      }
-      
+#client-post .hero {
+    background-image: url("../img/Foto_Hadisa2.png");
+  }
+
   .post__body {
-    display: grid;
-    grid-gap: 48px;
-    grid-template-columns: 0.6fr auto 1fr;
-    margin-left: auto;
-    margin-right: auto;
+    // height: fit-content;
+    // display: grid;
+    // grid-gap: 48px;
+    // grid-template-columns: 0.6fr auto 1fr;
+    // margin-left: auto;
+    // margin-right: auto;
     padding: 25px 75px 75px 75px ;
     @include font-size($p-header-font-sizes);
-    .post__main {
-        max-width: 750px;
-        @include mq(mid) {
-            max-width: 506px;
-        }
-    }
     @include mq(small){
       grid-template-columns: 1fr;
       padding: 25px;
     }
   }
 
-  .post__sidenav {
-    margin-left:auto;
-    margin-right:auto;
-    .sidenav__bg{
+  .post__main {
+    max-width: 750px;
+    @include mq(mid) {
+        max-width: 506px;
+    }
+}
+
+
+  .post__sidenav { 
+    max-width: 300px;
+    left:100%;
+    .sidenav__bg {
     background: var(--clr-umber-100);
     border-radius: 10px;
     padding: 20px;
@@ -83,12 +86,15 @@
               }
             }
           }
+    @include mq(small) {
+      display: none;
+    }
   }
   
-  .post__nav{
-      margin-left:auto;
-      margin-right:auto;
-      a{
+  .post__nav {
+      max-width: 200px;
+      right:100%;
+      a {
         @include hover-line-revers;
         &::after {
         content:url(../img/Vector.svg);
@@ -98,10 +104,12 @@
         border-bottom:0;
         position: absolute;
         }
-
+      }
+      @include mq(small) {
+        margin-left:20px;
+        margin-right:auto;
       }
   }
-
 
   .post__header {
     grid-column: 2 / 3;
@@ -125,6 +133,12 @@
       font-family: $sans;
     }
   }
+
+.sticy {
+  position : sticky;
+	top :0;
+}
+
 //   .post__nav,
 //   .post__sidenav {
 //       position: sticky;
@@ -225,3 +239,6 @@
       margin: 20px 0 10px 0;
     }
   
+
+
+ 

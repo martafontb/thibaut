@@ -203,30 +203,7 @@ document.getElementById('toggleIcon').addEventListener('touchstart', function() 
   menuToggle();
 })
 
-//info toggle
 
-//Profile-info toggle
-const infoToggle = document.querySelector('.expander')
-const body = document.querySelector('body')
-document.querySelector(".expander").addEventListener("click", animateIt);
 
-const tl = gsap.timeline();
-tl.from(".about__open",{
-  height: 0,
-  duration: 3,
-  ease:"power3.inOut"
-});
-tl.reversed(true);
 
-function animateIt() {
-  tl.reversed(!tl.reversed())
-    body.classList.toggle('profile-open')
-    if(body.classList.contains('profile-open')){
-      infoToggle.innerHTML = "Toon minder"
-      infoToggle.classList.add('info-toggle')
-    } else {
-      infoToggle.innerHTML = "Toon meer"
-      infoToggle.classList.remove('info-toggle')
-    }
-}
 

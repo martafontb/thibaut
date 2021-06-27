@@ -397,8 +397,8 @@ div.blog,
 
 
 #manifesto {
-  margin-bottom:0;
-  transform: translate3d(0px, 40px, 0px);
+  // margin-bottom:0;
+  // transform: translate3d(0px, 40px, 0px);
   .page__title {
     padding: 70px 0px 0px 0px;
     h2 {
@@ -431,8 +431,9 @@ div.blog,
   section.about {
     background-color: var(--clr-umber-300);
     padding: 75px 169px;
+    transform: translate3d(0px, 40px, 0px);
     @include mq(small) {
-      padding: 0px;
+      padding: 0px; 
     }
   }
   .about__wrapper {

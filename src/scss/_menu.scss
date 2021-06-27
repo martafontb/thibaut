@@ -16,7 +16,7 @@ header {
     }
 }
 
-#logo1 {
+svg#logo1 {
     display:block;
     path {
         transition: $default-transition;
@@ -26,7 +26,7 @@ header {
     }
 }
 
-#logo2 {
+svg#logo2 {
     display:none
 }
     
@@ -56,19 +56,17 @@ nav {
     width: 100%;
     z-index: 30;
     @include flexCenter(row);
+    justify-content: space-between;
         a {
         color:var(--clr-green-500);
-        @include hover-line();  
+        @include hover-line;  
         }
-
         i {
             transition: $default-transition;
             &:hover {
                 transform: scale(1.25);
             }
         }
-
-
         @include mq(small) {
         #menu-overlay {
         display:block;

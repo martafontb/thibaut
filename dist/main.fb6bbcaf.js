@@ -337,32 +337,7 @@ function menuToggle() {
 
 document.getElementById('toggleIcon').addEventListener('touchstart', function () {
   menuToggle();
-}); //info toggle
-//Profile-info toggle
-
-var infoToggle = document.querySelector('.expander');
-var body = document.querySelector('body');
-document.querySelector(".expander").addEventListener("click", animateIt);
-var tl = gsap.timeline();
-tl.from(".about__open", {
-  height: 0,
-  duration: 3,
-  ease: "power3.inOut"
 });
-tl.reversed(true);
-
-function animateIt() {
-  tl.reversed(!tl.reversed());
-  body.classList.toggle('profile-open');
-
-  if (body.classList.contains('profile-open')) {
-    infoToggle.innerHTML = "Toon minder";
-    infoToggle.classList.add('info-toggle');
-  } else {
-    infoToggle.innerHTML = "Toon meer";
-    infoToggle.classList.remove('info-toggle');
-  }
-}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -391,7 +366,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55284" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65503" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
