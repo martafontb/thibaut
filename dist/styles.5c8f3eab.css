@@ -782,37 +782,12 @@ ul {
       padding: 25px; } }
 
 .post__main {
-  max-width: 740px;
+  max-width: 700px;
   margin-right: 50px;
   margin-left: 50px; }
   @media only screen and (max-width: 65em) {
     .post__main {
       max-width: 506px; } }
-  .post__main .post__header {
-    grid-column: 2 / 3;
-    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
-    .post__main .post__header .post__tags .tag {
-      background: #F2E2D7;
-      border-radius: 2px;
-      padding: 2px 5px;
-      font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
-      color: var(--clr-umber-300); }
-    .post__main .post__header h2 {
-      font-size: 28px;
-      margin-top: 30px; }
-      @media screen and (min-width: 480px) {
-        .post__main .post__header h2 {
-          font-size: 28px; } }
-      @media screen and (min-width: 640px) {
-        .post__main .post__header h2 {
-          font-size: 32px; } }
-      @media screen and (min-width: 1024px) {
-        .post__main .post__header h2 {
-          font-size: 40px; } }
-    .post__main .post__header .post__date {
-      margin-bottom: 30px;
-      color: var(--clr-green-300);
-      font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
   .post__main h3 {
     font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
     font-size: 20px;
@@ -826,14 +801,103 @@ ul {
     @media screen and (min-width: 1024px) {
       .post__main h3 {
         font-size: 28px; } }
+    .post__main h3:before {
+      content: "";
+      display: block;
+      height: 100px;
+      margin: -100px 0 0; }
   .post__main p {
+    font-size: 18px;
     margin: 0px 0px 25px; }
+    @media screen and (min-width: 480px) {
+      .post__main p {
+        font-size: 18px; } }
+    @media screen and (min-width: 640px) {
+      .post__main p {
+        font-size: 20px; } }
+    @media screen and (min-width: 1024px) {
+      .post__main p {
+        font-size: 22px; } }
     .post__main p a {
+      font-size: 18px;
       font-family: "Plantin MT Pro Light", "Times New Roman", Times, serif;
       font-weight: 400;
       font-style: italic;
       color: var(--clr-green-300);
       text-decoration: underline; }
+      @media screen and (min-width: 480px) {
+        .post__main p a {
+          font-size: 18px; } }
+      @media screen and (min-width: 640px) {
+        .post__main p a {
+          font-size: 20px; } }
+      @media screen and (min-width: 1024px) {
+        .post__main p a {
+          font-size: 22px; } }
+  .post__main .blockquote {
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Plantin MT Pro Light", "Times New Roman", Times, serif; }
+  .post__main blockquote {
+    font-size: 20px; }
+    @media screen and (min-width: 480px) {
+      .post__main blockquote {
+        font-size: 20px; } }
+    @media screen and (min-width: 640px) {
+      .post__main blockquote {
+        font-size: 26px; } }
+    @media screen and (min-width: 1024px) {
+      .post__main blockquote {
+        font-size: 28px; } }
+  .post__main small {
+    font-size: 16px;
+    color: var(--clr-green-300); }
+    @media screen and (min-width: 480px) {
+      .post__main small {
+        font-size: 16px; } }
+    @media screen and (min-width: 640px) {
+      .post__main small {
+        font-size: 16px; } }
+    @media screen and (min-width: 1024px) {
+      .post__main small {
+        font-size: 17px; } }
+  .post__main em {
+    font-style: italic;
+    font-weight: 600; }
+  .post__main i {
+    font-style: italic;
+    font-weight: 300; }
+
+.post__header {
+  grid-column: 2 / 3;
+  font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
+  .post__header .post__tags .tag {
+    background: #F2E2D7;
+    border-radius: 2px;
+    padding: 2px 5px;
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
+    color: var(--clr-umber-300); }
+  .post__header h2 {
+    font-size: 28px;
+    margin-top: 30px; }
+    @media screen and (min-width: 480px) {
+      .post__header h2 {
+        font-size: 28px; } }
+    @media screen and (min-width: 640px) {
+      .post__header h2 {
+        font-size: 32px; } }
+    @media screen and (min-width: 1024px) {
+      .post__header h2 {
+        font-size: 40px; } }
+  .post__header .post__date {
+    margin-bottom: 30px;
+    color: var(--clr-green-300);
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif; }
 
 .post__sidenav {
   max-width: 300px;
@@ -842,34 +906,29 @@ ul {
   position: -webkit-sticky;
   top: 55px;
   margin-right: 40px; }
-  .post__sidenav .sidenav__wrapper {
-    background: var(--clr-umber-100);
-    border-radius: 10px;
-    padding: 20px;
-    padding-left: 35px; }
-    .post__sidenav .sidenav__wrapper h5 {
-      font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
-      margin-bottom: 15px;
-      margin-left: -15px; }
-    .post__sidenav .sidenav__wrapper ol {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      align-items: flex-start;
-      color: var(--clr-green-300);
-      font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
-      list-style-type: decimal;
-      max-width: 230px; }
-      .post__sidenav .sidenav__wrapper ol li {
-        margin-top: 5px;
-        padding: 5px;
-        line-height: 1.2; }
-        .post__sidenav .sidenav__wrapper ol li a {
-          color: var(--clr-green-300);
-          transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
-          .post__sidenav .sidenav__wrapper ol li a:hover {
-            color: var(--clr-green-500); }
+  .post__sidenav .card__wrapper h5 {
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
+    margin-bottom: 15px;
+    margin-left: -15px; }
+  .post__sidenav .card__wrapper ol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--clr-green-300);
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
+    list-style-type: decimal;
+    max-width: 230px; }
+    .post__sidenav .card__wrapper ol li {
+      margin-top: 5px;
+      padding: 5px;
+      line-height: 1.2; }
+      .post__sidenav .card__wrapper ol li a {
+        color: var(--clr-green-300);
+        transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
+        .post__sidenav .card__wrapper ol li a:hover {
+          color: var(--clr-green-500); }
   @media only screen and (max-width: 40em) {
     .post__sidenav {
       display: none; } }
@@ -911,6 +970,73 @@ ul {
     .post__nav {
       margin-left: 20px;
       margin-right: auto; } }
+
+.card__wrapper {
+  background: var(--clr-umber-100);
+  border-radius: 10px;
+  padding: 20px;
+  padding-left: 35px; }
+
+.post__other {
+  max-width: 700px;
+  padding: 25px;
+  margin-right: 340px;
+  margin-left: 240px; }
+  .post__other h1 {
+    color: var(--clr-umber-300);
+    font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px; }
+    @media screen and (min-width: 480px) {
+      .post__other h1 {
+        font-size: 16px; } }
+    @media screen and (min-width: 640px) {
+      .post__other h1 {
+        font-size: 16px; } }
+    @media screen and (min-width: 1024px) {
+      .post__other h1 {
+        font-size: 17px; } }
+  .post__other h3 {
+    margin-top: 15px;
+    font-size: 20px; }
+    @media screen and (min-width: 480px) {
+      .post__other h3 {
+        font-size: 20px; } }
+    @media screen and (min-width: 640px) {
+      .post__other h3 {
+        font-size: 26px; } }
+    @media screen and (min-width: 1024px) {
+      .post__other h3 {
+        font-size: 28px; } }
+  .post__other .post__prev {
+    color: var(--clr-green-300);
+    padding: 25px 0; }
+  .post__other .post__cta {
+    color: var(--clr-umber-300);
+    transition: color 0.3s ease-out;
+    position: relative; }
+    .post__other .post__cta::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: currentColor;
+      transform: scaleX(1);
+      transform-origin: bottom right;
+      transition: transform 0.5s ease-out; }
+    .post__other .post__cta:hover::before, .post__other .post__cta:focus::before {
+      transform: scaleX(0);
+      transform-origin: bottom right; }
+    .post__other .post__cta::after {
+      content: url(/Vector.794dec81.svg);
+      margin-left: 10px;
+      top: 10px;
+      border-bottom: 0;
+      position: absolute; }
 
 #client-post .aside__background {
   background-color: var(--clr-green-100);
