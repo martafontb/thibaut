@@ -978,10 +978,9 @@ ul {
   padding-left: 35px; }
 
 .post__other {
+  margin: 0px 340px 100px 240px;
   max-width: 700px;
-  padding: 25px;
-  margin-right: 340px;
-  margin-left: 240px; }
+  padding: 25px; }
   .post__other h1 {
     color: var(--clr-umber-300);
     font-family: "BentonSans-Regular", Helvetica, Arial, sans-serif;
