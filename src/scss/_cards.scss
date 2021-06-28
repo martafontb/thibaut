@@ -210,6 +210,9 @@
     }
   }
 
-  .client__card:nth-child(odd){
+  .client__card:nth-child(even){
     flex-direction: row-reverse;
+    @include mq(small) {
+      flex-direction: column;
+    }
   }
