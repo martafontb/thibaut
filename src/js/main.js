@@ -202,8 +202,3 @@ function menuToggle(){
 document.getElementById('toggleIcon').addEventListener('touchstart', function() {
   menuToggle();
 })
-
-
-
-
-

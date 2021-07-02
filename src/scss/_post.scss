@@ -86,7 +86,7 @@ padding:0;
       @include font-size($h3-font-sizes);
       text-align: center;
     }
-    small {
+    small, figcaption {
       @include font-size($p-font-sizes);
       color: var(--clr-green-300);
     }
@@ -100,6 +100,14 @@ padding:0;
     }
     img {
       width: 100%;
+    }
+    figcaption {
+      padding: 15px 0px 40px;
+      text-align: center;
+    }
+    .video {
+      @include aspect-ratio(2, 3);
+      max-width: 400px;
     }
 }
 .post__header {
@@ -265,5 +273,26 @@ padding:0;
   }
   @include mq(small) {
     margin:0;
+  }
+}
+
+.social__link {
+  @include flexCenter(column);
+  position: relative;
+}
+
+.btn {
+    position: absolute;
+    z-index:2;
+    text-align: center;
+    cursor: pointer;
+    background-color:#fff;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    @include flexCenter(column);
+    &::after {
+      content:url(../img/big-green-arrow.svg);
+      position: absolute;
   }
 }
