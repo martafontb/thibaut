@@ -34,6 +34,7 @@ padding:0;
   flex-direction: row;
   padding: 25px 75px 75px 75px ;
   @include font-size($p-header-font-sizes);
+  @include mq(mid) { padding: 25px 25px 75px 25px;}
   @include mq(small){
     flex-direction: column;
     padding: 25px;
@@ -45,6 +46,8 @@ padding:0;
     margin-left: 50px;
     @include mq(mid) {
         max-width: 506px;
+        margin-left: 45px;
+        margin-right: 10px;
     }
     @include mq(small) {
      margin:0;
@@ -81,6 +84,7 @@ padding:0;
     }
     blockquote{   
       @include font-size($h3-font-sizes);
+      text-align: center;
     }
     small {
       @include font-size($p-font-sizes);
@@ -115,7 +119,6 @@ padding:0;
     margin-top: 30px;
   }
   .post__date {
-    margin-bottom: 30px;
     color: var(--clr-green-300);
     font-family: $sans;
   }
@@ -132,6 +135,7 @@ padding:0;
     font-family: $sans;
     margin-bottom: 15px;
     margin-left: -15px;
+    color: var(--clr-umber-300);
   }
   ol {
     @include flexCenter(column);
@@ -155,8 +159,17 @@ padding:0;
   }
   }
 
-  @include mq(small) {
+  @include mq(mid) {
     display: none;
+  }
+} 
+#client-post .card__wrapper {
+  background-color: hsla(68, 13%, 88%, 1);
+  padding: 1.5em;
+  border-radius: 10%;
+  padding-left: 2em;
+  h5 {
+    color: var(--clr-green-500);
   }
 } 
 .post__nav {
@@ -177,9 +190,30 @@ padding:0;
       position: absolute;
       }
     }
+    @include mq(mid) {
+      margin-left:10px;
+      min-width: 70px;
+    }
     @include mq(small) {
       height: max-content;
       position: unset;
+      margin-left:10px;
+      margin-bottom: 25px;
+    }
+}
+#client-post .post__nav a,
+.post__back {
+  color:var(--clr-green-500);
+  @include hover-line-revers;
+        &::after {
+        content:url(../img/green-arrow.svg);
+        transform: rotate(180deg);
+        left: -15px;
+        top:10px;
+        border-bottom:0;
+        position: absolute;
+    }
+    @include mq(small) {
       margin-left:10px;
       margin-bottom: 25px;
     }
@@ -193,9 +227,13 @@ padding:0;
 }
 
 .post__other {
-  margin: 0px 340px 100px 240px;
+  margin: 0px 340px 100px 200px;
   max-width: 700px;
   padding:25px; 
+  .card__wrapper{
+    padding: 35px;
+  }
+  
   h1{
     color:var(--clr-umber-300);
     font-family: $sans;
@@ -221,75 +259,11 @@ padding:0;
     position: absolute;
     }
   }
+  @include mq(mid) {
+    margin: 0 auto 100px auto;
+    max-width: 600px;
+  }
   @include mq(small) {
     margin:0;
   }
 }
-
-  
-  #client-post .aside__background {
-    background-color: var(--clr-green-100);
-    padding: 1.5em;
-    border-radius: 10%;
-  }
-  
-  #blog-post .blog-post__header,
-  #client-post .client-post__header {
-    padding: 75px;
-    margin-top: 75px;
-    display: grid;
-    grid-template: auto 1fr auto;
-    margin-right: auto;
-    margin-left:auto;
-    .post__nav{
-      position:fixed;
-        grid-column: 1 / 2;
-        a     {
-          position: relative;
-          margin-right:auto;
-          @include hover-line-revers;
-              &::after {
-              content:url(../img/Vector.svg);
-              margin-left:10px;
-              top:10px;
-              border-bottom:0;
-              position: absolute;
-              }
-        } 
-      }
-    
-
-      section {
-        padding: 0 48px;
-        p {
-          margin-bottom: 25px;
-        }
-    }
-      .post__aside {
-        grid-column: 3 / 4;
-        max-width: 234px;
-        padding: 25px;
-        .aside__background {
-          h5 {
-            font-family: $sans;
-            margin-bottom: 15px;
-          }
-          ol {
-            @include flexCenter(column);
-            align-items: flex-start;
-            color: var(--clr-green-300);
-            font-family: $sans;
-            li {
-              line-height: 1.5;
-            }
-          }
-        }
-  
-  
-      }
-    }
-  
-
-
-
- 
