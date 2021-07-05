@@ -106,6 +106,13 @@ footer.addEventListener("mouseout", function(){
   arrow.classList.remove("footer");
 })
 
+
+
+
+
+
+
+
 //splitting
 Splitting();
 
@@ -133,8 +140,6 @@ AOS.init({
   * <div class="section" data-percentage="80" data-centered="true">
   */
 
-
-
   //Accessibility
   keyboardScrolling: true,
   animateAnchor: true,
@@ -150,9 +155,12 @@ AOS.init({
   dragAndMove: 'fingersonly',
   resetSliders: false,
   touchSensitivity: 15,
+  // normalScrollElements: '#header, #footer',
   // normalScrollElementTouchThreshold: 5,
   // autoScrolling: false
 });
+
+
 
 
 //menu
@@ -160,8 +168,6 @@ function menuToggle(){
   const menu = document.getElementById('menu-overlay');
   const fpNav = document.getElementById('fp-nav');
   const nav = document.querySelector('nav');
-  // const main = document.querySelector('main');
-  // const footer = document.querySelector('footer');
 
   menu.classList.toggle('active')
   nav.classList.toggle('dark')

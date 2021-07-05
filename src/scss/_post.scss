@@ -190,7 +190,7 @@ padding:0;
     a {
       @include hover-line-revers;
       &::after {
-      content:url(../img/Vector.svg);
+      content:url(../img/umber-arrow-right.svg);
       transform: rotate(180deg);
       left: -15px;
       top:10px;
@@ -260,7 +260,7 @@ padding:0;
     color: var(--clr-umber-300);
     @include hover-line-revers;
     &::after {
-    content:url(../img/Vector.svg);
+    content:url(../img/umber-arrow-right.svg);
     margin-left:10px;
     top:10px;
     border-bottom:0;

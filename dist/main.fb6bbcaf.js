@@ -283,9 +283,7 @@ new fullpage('#fullpage', (_fullpage = {
 function menuToggle() {
   var menu = document.getElementById('menu-overlay');
   var fpNav = document.getElementById('fp-nav');
-  var nav = document.querySelector('nav'); // const main = document.querySelector('main');
-  // const footer = document.querySelector('footer');
-
+  var nav = document.querySelector('nav');
   menu.classList.toggle('active');
   nav.classList.toggle('dark');
 
@@ -366,7 +364,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55431" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57837" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -24,7 +24,6 @@ div#fp-nav a span {
 
 #fv-dots ul li {
   padding: 6px;
-
 }
 
 #fv-dots ul li a span {
@@ -42,12 +41,21 @@ div#fp-nav a span {
   background-color: var(--clr-umber-300)!important;
 }
 
+body.fp-viewing-fourthPage #fp-nav{
+  display:none;
+}
+
 #fp-nav.fp-right {
  @include mq(small){
    right: -30px;
  }
 }
 
+
+
+body.fp-auto-height #fp-nav{
+  display:none;
+}
 
 @keyframes slide-up {
   from {
@@ -133,19 +141,19 @@ animation-delay: calc(.3s + (.15s * var(--line-index)));
     opacity:1;
   }
   
-.fp-viewing-fourthPage span.word {
-  opacity:1;
-  transform:translateY(0%);
-}
+// .fp-viewing-fourthPage span.word {
+//   opacity:1;
+//   transform:translateY(0%);
+// }
 
-.fp-viewing-fourthPage .client__photo img  {
-  opacity:1;
-}
+// .fp-viewing-fourthPage .client__photo img  {
+//   opacity:1;
+// }
 
 
-.fp-viewing-fourthPage .client__text {
-  margin-bottom: 0;
-}
+// .fp-viewing-fourthPage .client__text {
+//   margin-bottom: 0;
+// }
 
 
 

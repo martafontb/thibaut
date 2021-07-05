@@ -3,11 +3,15 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
-  
+
 //Profile-info toggle
 const infoToggle = document.querySelector('.expander')
 const body = document.querySelector('body')
 document.querySelector(".expander").addEventListener("click", animateIt);
+
+export default class Expander {
+  
+}
 
 const tl = gsap.timeline();
 tl.from(".about__open",{
